@@ -1,0 +1,37 @@
+[2026-01-16 23:23:43] root: INFO: Starting Severus 1.6
+[2026-01-16 23:23:43] root: DEBUG: Cmd: /storage/scratch01/groups/bu/simSVs/tfe_unir/visor-simulations/.snakemake/conda/0a60675bf6ce8bab1bbad883c64c3a01_/bin/severus --target-bam results/v1_40x_30000_A_LASeR/tumour.bam --control-bam results/normal_40x_30000_LASeR/sim.srt.bam --out-dir results/v1_40x_30000_A_severus --vntr-bed /storage/scratch01/groups/bu/simSVs/tfe_unir/visor-simulations/resources/severus_vntrs/human_chm13v2.0_maskedY_rCRS.trf.bed -t 24
+[2026-01-16 23:23:43] root: DEBUG: Python version: 3.13.11 | packaged by conda-forge | (main, Dec  6 2025, 11:24:03) [GCC 14.3.0]
+[2026-01-16 23:23:45] root: INFO: Parsing reads from tumour.bam
+[2026-01-16 23:39:37] root: INFO: 	Total read length: 128567782437
+[2026-01-16 23:39:38] root: INFO: 	Total aligned length: 122234022720 (0.95)
+[2026-01-16 23:39:38] root: INFO: 	Read N50 / N90: 33952 / 19201
+[2026-01-16 23:39:38] root: INFO: 	Alignments N50 / N90: 33729 / 19024
+[2026-01-16 23:39:38] root: INFO: 	Read error rate (Q25 / Q50 / Q75): 0.0600 / 0.0800 / 0.1130
+[2026-01-16 23:39:38] root: INFO: 	Read mismatch rate (Q25 / Q50 / Q75): 0.0210 / 0.0290 / 0.0450
+[2026-01-16 23:40:22] root: INFO: Parsing reads from sim.srt.bam
+[2026-01-16 23:50:02] root: INFO: 	Total read length: 130786999500
+[2026-01-16 23:50:02] root: INFO: 	Total aligned length: 124337950339 (0.95)
+[2026-01-16 23:50:02] root: INFO: 	Read N50 / N90: 33924 / 19187
+[2026-01-16 23:50:02] root: INFO: 	Alignments N50 / N90: 33700 / 19012
+[2026-01-16 23:50:02] root: INFO: 	Read error rate (Q25 / Q50 / Q75): 0.0600 / 0.0800 / 0.1130
+[2026-01-16 23:50:02] root: INFO: 	Read mismatch rate (Q25 / Q50 / Q75): 0.0210 / 0.0290 / 0.0450
+[2026-01-16 23:50:33] root: INFO: Computing read quality
+[2026-01-16 23:50:43] root: INFO: Annotating reads
+[2026-01-16 23:51:06] root: INFO: Computing coverage histogram
+[2026-01-16 23:51:07] root: INFO: 	Median coverage by PASS reads for tumour.bam (H1 / H2 / H0): 0.0 / 0.0 / 38.0
+[2026-01-16 23:51:08] root: INFO: 	Median coverage by PASS reads for sim.srt.bam (H1 / H2 / H0): 0.0 / 0.0 / 38.0
+[2026-01-16 23:51:08] root: INFO: Extracting split alignments
+[2026-01-16 23:51:08] root: INFO: Extracting clipped reads
+[2026-01-16 23:51:13] root: INFO: Starting breakpoint detection
+[2026-01-16 23:51:16] root: INFO: Clustering unmapped insertions
+[2026-01-16 23:51:25] root: INFO: Starting compute_bp_coverage
+[2026-01-16 23:52:17] root: INFO: Filtering breakpoints
+[2026-01-16 23:52:17] root: INFO: Writing breakpoints
+[2026-01-16 23:52:17] root: INFO: Preparing outputs for all_SVs
+[2026-01-16 23:52:17] root: INFO: 	Computing segment coverage
+[2026-01-16 23:52:17] root: INFO: 	Preparing graph
+[2026-01-16 23:52:17] root: INFO: 	Writing vcf
+[2026-01-16 23:52:17] root: INFO: Preparing outputs for somatic_SVs
+[2026-01-16 23:52:17] root: INFO: 	Computing segment coverage
+[2026-01-16 23:52:17] root: INFO: 	Preparing graph
+[2026-01-16 23:52:18] root: INFO: 	Writing vcf

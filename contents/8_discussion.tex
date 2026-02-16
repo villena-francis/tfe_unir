@@ -1,0 +1,176 @@
+\chapter{Discusión}
+
+\section{Parámetros de las simulaciones}
+
+La simulación de variantes estructurales se configuró para representar 
+secuenciación masiva (\textit{bulk sequencing}) de una población celular 
+homogénea que contiene un único clon tumoral, estableciendo todas las frecuencias 
+alélicas de variante (VAFs, del inglés \textit{Variant Allele Frequencies}) en 
+0,5. Esta configuración garantiza que cada variante esté presente en un alelo 
+y representada en aproximadamente la mitad de las lecturas de secuenciación 
+generadas. Este diseño buscaba proporcionar una representación clara de las 
+variantes en las lecturas, asegurando una detección fiable por parte de los 
+métodos evaluados y facilitando la validación visual de los breakpoints mediante 
+inspección con GW. Sin embargo, este escenario idealizado difiere sustancialmente 
+de las muestras tumorales reales, donde las frecuencias alélicas varían 
+considerablemente debido a la heterogeneidad intratumoral, la evolución clonal 
+y la contaminación con células normales \cite{dagogo-jack_tumour_2018}. Esta 
+simplificación, aunque permite una evaluación comparativa rigurosa en 
+condiciones controladas, limita la extrapolación directa de los resultados 
+a muestras clínicas reales.
+
+Cabe destacar que el protocolo de la plataforma PromethION para ADN humano de 
+10 kb con el kit de secuenciación por ligación V14 tiene como objetivo generar 
+una cobertura genómica de aproximadamente 30-40x con una única celda de flujo 
+\cite{noauthor_ligation_2022}. Por esta razón, se concluyó que, al menos para 
+alteraciones \textit{driver}, la profundidad de secuenciación de 40x 
+resultaba coste-eficiente, estableciéndose como valor 
+estándar para el presente trabajo.
+
+La selección de SVs para la simulación estuvo influenciada por la investigación 
+en curso del grupo de lecturas largas de la Unidad de Bioinformática del CNIO, 
+específicamente por su colaboración con el grupo de Neoplasias Hematológicas 
+del Hospital 12 de Octubre en la secuenciación WGS de muestras de pacientes 
+con MM, comparando muestras pretratamiento y recaídas. En consecuencia, el 
+conjunto de SVs incluye tanto variantes características de MM como SVs más 
+especulativas relacionadas con cáncer, con el objetivo de cubrir un espectro 
+más amplio de variantes estructurales. A pesar del uso generalizado de GRCh38 
+en la investigación, principalmente motivado y mantenido por el uso de 
+plataformas de secuenciación de lecturas cortas, se eligió el genoma de 
+referencia T2T debido a su mayor completitud y continuidad en regiones 
+previamente difíciles de ensamblar.
+
+Cabe destacar que, para el caso de la amplificación del brazo cromosómico 1p, 
+lo más probable es que haya sido un error derivado de la documentación de VISOR-LASeR
+[CITA], la cual indica que \textit{``[...] for tandem duplication and inverted tandem 
+duplication, must be an integer, specifying the number of times the region have 
+to be duplicated''}. Esto sugiere que el valor 1 debería generar una
+duplicación (dos copias); sin embargo, en su ejecución simplemente mantiene una copia
+del par cromosómico seleccionado. Por esta razón se observa en el perfil de
+cobertura del chr1 una ganancia de 3 copias de la región 1q21 en lugar de las
+4 especificadas en las instrucciones para el simulador (\textbf{Figura~\ref{fig:chr1_subfig}}).
+
+\section{Rendimiento y limitaciones de los detectores de SVs}
+
+Las métricas de rendimiento posicionan a SAVANA como la herramienta con mejor 
+desempeño. Resulta notable que SAVANA alcance este rendimiento sin requerir un 
+archivo de VNTRs, a diferencia de otras herramientas evaluadas que dependen de 
+esta información adicional. Sin embargo, su limitación a la correlación de puntos 
+de ruptura sin clasificación de SV representa un inconveniente significativo. Esta 
+limitación, combinada con un consumo de RAM bastante superior, impacta negativamente
+su utilidad práctica. 
+
+Severus iguala la sensibilidad de SAVANA mientras mantiene un menor uso 
+de RAM y proporciona clasificación exhaustiva de SV junto con representaciones 
+visuales de los reordenamientos cromosómicos. Estas características probablemente 
+influyeron en la integración de Severus para la detección de variantes somáticas
+a través de EPI2ME, la plataforma de código abierto de Oxford Nanopore 
+diseñada para proporcionar a los científicos de laboratorio húmedo una interfaz 
+amigable para el análisis de datos sin requerir habilidades avanzadas de 
+bioinformática. Sin embargo, la documentación de EPI2ME carece de análisis 
+comparativos que justifiquen la selección de Severus sobre otros detectores de SV, 
+posiblemente debido a su enfoque en la accesibilidad práctica para su audiencia 
+objetivo en lugar de la evaluación técnica comparativa
+\cite{oxford_nanopore_technologies_epi2me_nodate}. Los falsos positivos que 
+redujeron la precisión de Severus tienen un perfil bastante concreto: inserciones 
+de entre 50-60 pb y deleciones de 2-0,5 kb. Una optimización adicional de 
+parámetros o un filtrado post-procesamiento podría reducir estos falsos positivos 
+y mejorar su aplicabilidad.
+
+La sensibilidad de Svision-pro fue ligeramente inferior respecto a SAVANA y 
+Severus, aunque su tiempo de ejecución fue notablemente menor gracias a la 
+aceleración por GPU. No obstante, la gran cantidad de falsos positivos supone un 
+problema; al igual que SAVANA, este método carece del uso de coordenadas de VNTRs 
+para mejorar su desempeño y muy posiblemente se vea beneficiado al implementarlo, 
+aunque como alternativa un filtrado post-procesamiento también podría mitigar el 
+problema.
+
+Sniffles2 mostró muy bajo rendimiento, siendo únicamente capaz de detectar 
+la translocación recíproca 11q13-14q32 en la mitad de las muestras tumorales 
+generadas. No obstante, también detectó como falsos positivos translocaciones entre
+otros cromosomas. Cabe destacar que este método hace una inferencia de variantes 
+somáticas, al que denomina modo mosaico, haciendo un análisis exclusivo de la muestra
+tumoral, a diferencia de los tres métodos anteriores que usan pares tumor-normal.
+De haber tenido buen desempeño, habría sido una opción coste-eficiente al no 
+necesitar secuenciación de muestra normal. También es necesario destacar que
+los análisis de este trabajo emplearon conjuntos mínimos de argumentos para todos 
+los detectores, confiando en los parámetros por defecto configurados por los 
+desarrolladores para ajustes complejos. Esta aproximación estandarizada podría 
+explicar el bajo rendimiento de Sniffles2, ya que la configuración por defecto 
+podría no estar optimizada para variantes tan extensas como las evaluadas en este
+trabajo.
+
+\section{Relevancia clínica y desafíos técnicos}
+
+El conjunto de herramientas VISOR demostró ser valioso para evaluar la capacidad 
+de los detectores de SV para identificar eventos estructurales de gran tamaño 
+característicos del mieloma múltiple utilizando lecturas largas de ONT, 
+particularmente aquellos con significancia diagnóstica. A través de la generación 
+de datos sintéticos, se validó exitosamente la detección de algunas aberraciones 
+cromosómicas frecuentes en mieloma múltiple. Estas variantes estructurales, 
+actualmente verificadas en entornos clínicos mediante FISH debido a las limitaciones 
+del ensamblaje de secuenciación de lecturas cortas, representan marcadores 
+diagnósticos críticos que potencialmente podrían identificarse mediante enfoques 
+de secuenciación de lecturas largas \cite{garces_time_2026}.
+
+Los datos simulados incluyeron SVs distribuidas como haplotipos (h1 y h2); sin
+embargo, el genoma de referencia con el que se generaron las lecturas presenta
+una única copia de cada cromosoma, lo cual deja al resto de regiones sin SVs sin
+variabilidad suficiente para hacer \textit{haplotype phasing}, es decir, 
+la asignación de variantes al mismo cromosoma parental para diferenciarlos. En
+muestras reales de pacientes con mieloma múltiple, esta información permite 
+reconstruir y analizar aberraciones cromosómicas (CNAs), mitigando las carencias de
+los métodos de detección de SVs respecto a la ganancia o pérdida de segmentos o 
+cromosomas completos. Otra característica genómica importante es la pérdida de 
+heterocigosidad con número de copias neutral (CN-LOH, del inglés \textit{copy-neutral 
+loss of heterozygosity}). En MM, por ejemplo, las regiones pueden parecer diploides 
+pero ser homocigotas debido a la deleción de un alelo y la duplicación del otro 
+\cite{garces_time_2026} (\textbf{Figura~\ref{fig:FISH_and_CNAs}}). 
+
+Los intentos iniciales de visualización de los datos sintéticos se realizaron 
+utilizando el ampliamente adoptado \textit{Integrative Genomics Viewer} (IGV); 
+sin embargo, esta herramienta no permitió la exploración de los archivos completos 
+de lecturas alineadas (BAM), mostrando tiempos de carga lentos y numerosas caídas 
+del programa. Una alternativa podría haber sido leer los VCFs y, en base a los 
+hallazgos, extraer pequeñas regiones que contengan sus respectivos puntos de 
+ruptura; no obstante, esto habría eternizado los flujos de trabajo para validar 
+visualmente las variantes. GW surgió como una alternativa capaz, ya que permite 
+procesar y navegar por todo el genoma en cada fichero sin tiempos de carga al 
+desplazarse entre las diferentes SVs anotadas en los VCFs (\textbf{Figura~\ref{fig:GW_UI}}). 
+Cabe resaltar que esto fue posible haciendo \textit{streaming} de los archivos 
+desde el clúster del CNIO sin necesidad de descargar ningún archivo directamente 
+a la computadora local desde la que se ejecutó GW; esto supone una enorme 
+agilización en el proceso de inspección y validación de lecturas genómicas en el 
+contexto de un gran número de muestras.
+
+\section{Líneas futuras}
+
+El desarrollo de herramientas robustas para el análisis de SVs en genomas 
+cancerosos requiere pruebas y validación extensivas. Si bien este estudio evaluó 
+las capacidades de detección de SVs utilizando datos sintéticos con diferentes 
+longitudes medias de lecturas, principalmente demuestra el valor de generar 
+conjuntos de datos simulados para la evaluación comparativa de herramientas 
+existentes. La implementación de un genoma de referencia diploide como el 
+T2T-YAO \cite{he_t2t-yao_2023}, que incluye ensamblajes T2T completos de ambos 
+haplotipos para los 22 autosomas y los cromosomas sexuales (X e Y), además 
+del genoma mitocondrial, permitiría realizar fasado haplotípico (\textit{haplotype 
+phasing}) de las lecturas sintéticas generadas, facilitando la distinción entre 
+variantes somáticas y germinales. Estos avances computacionales contribuyen en 
+última instancia a mejorar el análisis genómico del cáncer en datos humanos reales.
+
+Es necesario trasladar la experiencia adquirida con los datos sintéticos al 
+análisis de datos reales. Los métodos SAVANA y Severus mostraron los mejores
+resultados y, con ligeros ajustes para este último, podrían usarse para la 
+detección confiable de SVs. No obstante, la experiencia adquirida tras haber 
+analizado ya algunas muestras de mieloma múltiple indica que el ruido biológico 
+y el elevado incremento en el número de hallazgos aumentan notablemente las 
+demandas computacionales, volviendo a ser el punto más crítico las elevadas 
+demandas de memoria RAM, llegando a superar los 300 GB.
+
+Existen eventos de variación estructural relevantes que no son fácilmente 
+identificables mediante la inspección visual de alineamientos ni detectables 
+por los métodos convencionales de detección de SVs. Para estos casos, resulta 
+necesario complementar el análisis con herramientas especializadas en la 
+inferencia de aberraciones en el número de copias (CNAs) para datos de secuenciación
+de lecturas largas, como Wakhan, cuyo desarrollo y optimización continúa en 
+proceso de desarrollo y maduración.

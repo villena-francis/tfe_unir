@@ -1,0 +1,666 @@
+2026-01-17 00:59:53,351 [INFO]    ****************** Start SVision-pro, version 2.5 ********************
+2026-01-17 00:59:53,352 [INFO]    Command: /storage/scratch01/groups/bu/simSVs/tfe_unir/visor-simulations/.snakemake/conda/8698eeced1a729a78f4a9d539d4293a9_/bin/SVision-pro --target_path results/v1_40x_30000_A_LASeR/tumour.bam --base_path results/normal_40x_30000_LASeR/sim.srt.bam --genome_path resources/genome/chm13v2.0_maskedY_rCRS.fa --model_path /home/fvillena/SVision-pro/src/pre_process/model_liteunet_1024_8_16_32_32_32.pth --out_path results/v1_40x_30000_A_svision --sample_name v1 --preset error-prone --detect_mode somatic --process_num 52
+2026-01-17 00:59:53,352 [INFO]    ****************** Step1 collecting and plotting **********************
+2026-01-17 01:00:11,899 [INFO]    Collecting v1 chr2_240000000_250000000, 10 candidate events found. Time cost 18s
+2026-01-17 01:00:26,148 [INFO]    Collecting v1 chr1_130000000_140000000, 0 candidate events found. Time cost 32s
+2026-01-17 01:00:30,680 [INFO]    Collecting v1 chr3_0_10000000, 0 candidate events found. Time cost 36s
+2026-01-17 01:00:31,443 [INFO]    Collecting v1 chr2_220000000_230000000, 0 candidate events found. Time cost 37s
+2026-01-17 01:00:31,574 [INFO]    Collecting v1 chr1_100000000_110000000, 0 candidate events found. Time cost 37s
+2026-01-17 01:00:31,937 [INFO]    Collecting v1 chr1_190000000_200000000, 0 candidate events found. Time cost 38s
+2026-01-17 01:00:32,671 [INFO]    Collecting v1 chr2_30000000_40000000, 0 candidate events found. Time cost 38s
+2026-01-17 01:00:33,007 [INFO]    Collecting v1 chr2_170000000_180000000, 2 candidate events found. Time cost 39s
+2026-01-17 01:00:34,310 [INFO]    Collecting v1 chr1_200000000_210000000, 0 candidate events found. Time cost 40s
+2026-01-17 01:00:34,437 [INFO]    Collecting v1 chr1_70000000_80000000, 0 candidate events found. Time cost 40s
+2026-01-17 01:00:35,690 [INFO]    Collecting v1 chr1_80000000_90000000, 0 candidate events found. Time cost 42s
+2026-01-17 01:00:36,440 [INFO]    Collecting v1 chr2_140000000_150000000, 1 candidate events found. Time cost 42s
+2026-01-17 01:00:37,932 [INFO]    Collecting v1 chr3_10000000_20000000, 0 candidate events found. Time cost 44s
+2026-01-17 01:00:47,486 [INFO]    Collecting v1 chr2_40000000_50000000, 0 candidate events found. Time cost 53s
+2026-01-17 01:00:48,455 [INFO]    Collecting v1 chr1_120000000_130000000, 0 candidate events found. Time cost 54s
+2026-01-17 01:00:49,068 [INFO]    Collecting v1 chr1_160000000_170000000, 0 candidate events found. Time cost 55s
+2026-01-17 01:00:50,706 [INFO]    Collecting v1 chr2_210000000_220000000, 1 candidate events found. Time cost 57s
+2026-01-17 01:00:53,102 [INFO]    Collecting v1 chr2_60000000_70000000, 5 candidate events found. Time cost 59s
+2026-01-17 01:00:55,516 [INFO]    Collecting v1 chr3_20000000_30000000, 0 candidate events found. Time cost 43s
+2026-01-17 01:00:56,005 [INFO]    Collecting v1 chr1_10000000_20000000, 3 candidate events found. Time cost 62s
+2026-01-17 01:01:05,112 [INFO]    Collecting v1 chr3_200000000_210000000, 0 candidate events found. Time cost 9s
+2026-01-17 01:01:11,588 [INFO]    Collecting v1 chr1_170000000_180000000, 0 candidate events found. Time cost 77s
+2026-01-17 01:01:17,934 [INFO]    Collecting v1 chr1_210000000_220000000, 0 candidate events found. Time cost 84s
+2026-01-17 01:01:21,021 [INFO]    Collecting v1 chr1_240000000_250000000, 9 candidate events found. Time cost 87s
+2026-01-17 01:01:22,654 [INFO]    Collecting v1 chr2_100000000_110000000, 0 candidate events found. Time cost 88s
+2026-01-17 01:01:23,048 [INFO]    Collecting v1 chr1_230000000_240000000, 4 candidate events found. Time cost 89s
+2026-01-17 01:01:24,666 [INFO]    Collecting v1 chr2_10000000_20000000, 0 candidate events found. Time cost 90s
+2026-01-17 01:01:24,959 [INFO]    Collecting v1 chr2_110000000_120000000, 9 candidate events found. Time cost 91s
+2026-01-17 01:01:27,916 [INFO]    Collecting v1 chr3_50000000_60000000, 0 candidate events found. Time cost 56s
+2026-01-17 01:01:28,059 [INFO]    Collecting v1 chr1_40000000_50000000, 0 candidate events found. Time cost 94s
+2026-01-17 01:01:28,340 [INFO]    Collecting v1 chr1_20000000_30000000, 0 candidate events found. Time cost 94s
+2026-01-17 01:01:28,666 [INFO]    Collecting v1 chr2_160000000_170000000, 0 candidate events found. Time cost 94s
+2026-01-17 01:01:30,878 [INFO]    Collecting v1 chr1_30000000_40000000, 0 candidate events found. Time cost 97s
+2026-01-17 01:01:32,610 [INFO]    Collecting v1 chr2_190000000_200000000, 0 candidate events found. Time cost 98s
+2026-01-17 01:01:35,556 [INFO]    Collecting v1 chr3_30000000_40000000, 3 candidate events found. Time cost 69s
+2026-01-17 01:01:35,825 [INFO]    Collecting v1 chr2_70000000_80000000, 1 candidate events found. Time cost 102s
+2026-01-17 01:01:36,163 [INFO]    Collecting v1 chr2_0_10000000, 16 candidate events found. Time cost 102s
+2026-01-17 01:01:38,471 [INFO]    Collecting v1 chr2_200000000_210000000, 0 candidate events found. Time cost 104s
+2026-01-17 01:01:39,402 [INFO]    Collecting v1 chr1_0_10000000, 13 candidate events found. Time cost 105s
+2026-01-17 01:01:39,669 [INFO]    Collecting v1 chr1_220000000_230000000, 0 candidate events found. Time cost 105s
+2026-01-17 01:01:40,939 [INFO]    Collecting v1 chr1_50000000_60000000, 0 candidate events found. Time cost 107s
+2026-01-17 01:01:41,427 [INFO]    Collecting v1 chr3_80000000_90000000, 0 candidate events found. Time cost 68s
+2026-01-17 01:01:41,544 [INFO]    Collecting v1 chr1_90000000_100000000, 0 candidate events found. Time cost 107s
+2026-01-17 01:01:41,761 [INFO]    Collecting v1 chr2_50000000_60000000, 0 candidate events found. Time cost 108s
+2026-01-17 01:01:43,725 [INFO]    Collecting v1 chr3_140000000_150000000, 0 candidate events found. Time cost 65s
+2026-01-17 01:01:43,807 [INFO]    Collecting v1 chr2_130000000_140000000, 0 candidate events found. Time cost 110s
+2026-01-17 01:01:44,830 [INFO]    Collecting v1 chr3_60000000_70000000, 1 candidate events found. Time cost 73s
+2026-01-17 01:01:45,378 [INFO]    Collecting v1 chr2_150000000_160000000, 0 candidate events found. Time cost 111s
+2026-01-17 01:01:45,493 [INFO]    Collecting v1 chr1_60000000_70000000, 0 candidate events found. Time cost 111s
+2026-01-17 01:01:45,541 [INFO]    Collecting v1 chr3_70000000_80000000, 0 candidate events found. Time cost 73s
+2026-01-17 01:01:47,997 [INFO]    Collecting v1 chr1_180000000_190000000, 0 candidate events found. Time cost 114s
+2026-01-17 01:01:49,119 [INFO]    Collecting v1 chr3_40000000_50000000, 2 candidate events found. Time cost 78s
+2026-01-17 01:01:49,439 [INFO]    Collecting v1 chr2_180000000_190000000, 0 candidate events found. Time cost 115s
+2026-01-17 01:01:51,124 [INFO]    Collecting v1 chr3_130000000_140000000, 1 candidate events found. Time cost 74s
+2026-01-17 01:01:51,318 [INFO]    Collecting v1 chr2_80000000_90000000, 8 candidate events found. Time cost 117s
+2026-01-17 01:01:52,384 [INFO]    Collecting v1 chr3_120000000_130000000, 0 candidate events found. Time cost 76s
+2026-01-17 01:01:52,464 [INFO]    Collecting v1 chr3_110000000_120000000, 0 candidate events found. Time cost 78s
+2026-01-17 01:01:54,422 [INFO]    Collecting v1 chr2_20000000_30000000, 0 candidate events found. Time cost 120s
+2026-01-17 01:01:54,493 [INFO]    Collecting v1 chr2_90000000_100000000, 11 candidate events found. Time cost 120s
+2026-01-17 01:01:57,510 [INFO]    Collecting v1 chr3_150000000_160000000, 0 candidate events found. Time cost 70s
+2026-01-17 01:01:58,441 [INFO]    Collecting v1 chr3_170000000_180000000, 0 candidate events found. Time cost 69s
+2026-01-17 01:01:59,702 [INFO]    Collecting v1 chr3_100000000_110000000, 0 candidate events found. Time cost 85s
+2026-01-17 01:02:00,706 [INFO]    Collecting v1 chr3_160000000_170000000, 0 candidate events found. Time cost 72s
+2026-01-17 01:02:01,627 [INFO]    Collecting v1 chr3_180000000_190000000, 0 candidate events found. Time cost 70s
+2026-01-17 01:02:03,327 [INFO]    Collecting v1 chr2_120000000_130000000, 8 candidate events found. Time cost 129s
+2026-01-17 01:02:05,096 [INFO]    Collecting v1 chr4_190000000_200000000, 0 candidate events found. Time cost 25s
+2026-01-17 01:02:07,757 [INFO]    Collecting v1 chr1_150000000_160000000, 7 candidate events found. Time cost 134s
+2026-01-17 01:02:08,248 [INFO]    Collecting v1 chr2_230000000_240000000, 26 candidate events found. Time cost 134s
+2026-01-17 01:02:08,662 [INFO]    Collecting v1 chr3_90000000_100000000, 0 candidate events found. Time cost 95s
+2026-01-17 01:02:09,799 [INFO]    Collecting v1 chr5_180000000_190000000, 0 candidate events found. Time cost 15s
+2026-01-17 01:02:14,888 [INFO]    Collecting v1 chr3_190000000_200000000, 8 candidate events found. Time cost 81s
+2026-01-17 01:02:15,989 [INFO]    Collecting v1 chr4_10000000_20000000, 1 candidate events found. Time cost 70s
+2026-01-17 01:02:20,132 [INFO]    Collecting v1 chr4_20000000_30000000, 0 candidate events found. Time cost 68s
+2026-01-17 01:02:20,307 [INFO]    Collecting v1 chr4_50000000_60000000, 0 candidate events found. Time cost 57s
+2026-01-17 01:02:28,398 [INFO]    Collecting v1 chr4_30000000_40000000, 0 candidate events found. Time cost 70s
+2026-01-17 01:02:28,487 [INFO]    Collecting v1 chr4_40000000_50000000, 0 candidate events found. Time cost 67s
+2026-01-17 01:02:29,115 [INFO]    Collecting v1 chr1_110000000_120000000, 24 candidate events found. Time cost 155s
+2026-01-17 01:02:30,732 [INFO]    Collecting v1 chr4_90000000_100000000, 0 candidate events found. Time cost 62s
+2026-01-17 01:02:34,595 [INFO]    Collecting v1 chr4_60000000_70000000, 0 candidate events found. Time cost 71s
+2026-01-17 01:02:38,007 [INFO]    Collecting v1 chr4_120000000_130000000, 0 candidate events found. Time cost 69s
+2026-01-17 01:02:38,061 [INFO]    Collecting v1 chr4_100000000_110000000, 0 candidate events found. Time cost 69s
+2026-01-17 01:02:38,272 [INFO]    Collecting v1 chr4_70000000_80000000, 5 candidate events found. Time cost 73s
+2026-01-17 01:02:38,526 [INFO]    Collecting v1 chr4_110000000_120000000, 1 candidate events found. Time cost 70s
+2026-01-17 01:02:38,943 [INFO]    Collecting v1 chr4_0_10000000, 9 candidate events found. Time cost 102s
+2026-01-17 01:02:42,665 [INFO]    Collecting v1 chr6_170000000_180000000, 0 candidate events found. Time cost 14s
+2026-01-17 01:02:42,813 [INFO]    Collecting v1 chr4_130000000_140000000, 0 candidate events found. Time cost 71s
+2026-01-17 01:02:44,213 [INFO]    Collecting v1 chr4_160000000_170000000, 0 candidate events found. Time cost 68s
+2026-01-17 01:02:45,517 [INFO]    Collecting v1 chr4_150000000_160000000, 0 candidate events found. Time cost 69s
+2026-01-17 01:02:45,812 [INFO]    Collecting v1 chr4_140000000_150000000, 1 candidate events found. Time cost 73s
+2026-01-17 01:02:46,119 [INFO]    Collecting v1 chr5_0_10000000, 6 candidate events found. Time cost 66s
+2026-01-17 01:02:46,120 [INFO]    Collecting v1 chr4_80000000_90000000, 0 candidate events found. Time cost 81s
+2026-01-17 01:02:47,008 [INFO]    Collecting v1 chr4_170000000_180000000, 0 candidate events found. Time cost 70s
+2026-01-17 01:02:51,038 [INFO]    Collecting v1 chr1_140000000_150000000, 2 candidate events found. Time cost 177s
+2026-01-17 01:02:51,289 [INFO]    Collecting v1 chr5_20000000_30000000, 0 candidate events found. Time cost 69s
+2026-01-17 01:02:51,684 [INFO]    Collecting v1 chr5_60000000_70000000, 0 candidate events found. Time cost 67s
+2026-01-17 01:02:51,785 [INFO]    Collecting v1 chr5_10000000_20000000, 0 candidate events found. Time cost 70s
+2026-01-17 01:02:52,895 [INFO]    Collecting v1 chr5_30000000_40000000, 0 candidate events found. Time cost 71s
+2026-01-17 01:02:54,426 [INFO]    Collecting v1 chr5_40000000_50000000, 0 candidate events found. Time cost 72s
+2026-01-17 01:02:54,520 [INFO]    Collecting v1 chr5_90000000_100000000, 0 candidate events found. Time cost 69s
+2026-01-17 01:02:55,072 [INFO]    Collecting v1 chr5_50000000_60000000, 0 candidate events found. Time cost 71s
+2026-01-17 01:02:55,260 [INFO]    Collecting v1 chr5_80000000_90000000, 0 candidate events found. Time cost 69s
+2026-01-17 01:02:55,623 [INFO]    Collecting v1 chr5_100000000_110000000, 0 candidate events found. Time cost 70s
+2026-01-17 01:02:56,537 [INFO]    Collecting v1 chr5_110000000_120000000, 0 candidate events found. Time cost 68s
+2026-01-17 01:02:57,185 [INFO]    Collecting v1 chr5_70000000_80000000, 0 candidate events found. Time cost 72s
+2026-01-17 01:02:57,548 [INFO]    Collecting v1 chr5_120000000_130000000, 0 candidate events found. Time cost 68s
+2026-01-17 01:02:59,613 [INFO]    Collecting v1 chr5_160000000_170000000, 0 candidate events found. Time cost 67s
+2026-01-17 01:02:59,661 [INFO]    Collecting v1 chr5_130000000_140000000, 0 candidate events found. Time cost 70s
+2026-01-17 01:03:03,598 [INFO]    Collecting v1 chr7_160000000_170000000, 2 candidate events found. Time cost 12s
+2026-01-17 01:03:05,520 [INFO]    Collecting v1 chr5_140000000_150000000, 0 candidate events found. Time cost 74s
+2026-01-17 01:03:05,566 [INFO]    Collecting v1 chr5_150000000_160000000, 0 candidate events found. Time cost 74s
+2026-01-17 01:03:08,104 [INFO]    Collecting v1 chr5_170000000_180000000, 1 candidate events found. Time cost 75s
+2026-01-17 01:03:08,812 [INFO]    Collecting v1 chr6_30000000_40000000, 0 candidate events found. Time cost 69s
+2026-01-17 01:03:09,839 [INFO]    Collecting v1 chr6_50000000_60000000, 0 candidate events found. Time cost 68s
+2026-01-17 01:03:10,300 [INFO]    Collecting v1 chr6_40000000_50000000, 0 candidate events found. Time cost 69s
+2026-01-17 01:03:11,264 [INFO]    Collecting v1 chr6_20000000_30000000, 0 candidate events found. Time cost 72s
+2026-01-17 01:03:14,781 [INFO]    Collecting v1 chr6_10000000_20000000, 6 candidate events found. Time cost 77s
+2026-01-17 01:03:15,737 [INFO]    Collecting v1 chr6_70000000_80000000, 0 candidate events found. Time cost 70s
+2026-01-17 01:03:17,548 [INFO]    Collecting v1 chr6_110000000_120000000, 0 candidate events found. Time cost 67s
+2026-01-17 01:03:17,648 [INFO]    Collecting v1 chr6_90000000_100000000, 0 candidate events found. Time cost 69s
+2026-01-17 01:03:19,220 [INFO]    Collecting v1 chr6_0_10000000, 2 candidate events found. Time cost 84s
+2026-01-17 01:03:19,924 [INFO]    Collecting v1 chr6_80000000_90000000, 0 candidate events found. Time cost 72s
+2026-01-17 01:03:20,562 [INFO]    Collecting v1 chr6_100000000_110000000, 0 candidate events found. Time cost 71s
+2026-01-17 01:03:23,519 [INFO]    Collecting v1 chr6_130000000_140000000, 0 candidate events found. Time cost 67s
+2026-01-17 01:03:24,688 [INFO]    Collecting v1 chr6_120000000_130000000, 0 candidate events found. Time cost 69s
+2026-01-17 01:03:28,470 [INFO]    Collecting v1 chr6_150000000_160000000, 2 candidate events found. Time cost 68s
+2026-01-17 01:03:31,328 [INFO]    Collecting v1 chr7_10000000_20000000, 0 candidate events found. Time cost 60s
+2026-01-17 01:03:31,370 [INFO]    Collecting v1 chr6_140000000_150000000, 2 candidate events found. Time cost 71s
+2026-01-17 01:03:32,189 [INFO]    Collecting v1 chr9_150000000_160000000, 1 candidate events found. Time cost 7s
+2026-01-17 01:03:35,400 [INFO]    Collecting v1 chr6_60000000_70000000, 5 candidate events found. Time cost 92s
+2026-01-17 01:03:39,227 [INFO]    Collecting v1 chr7_60000000_70000000, 0 candidate events found. Time cost 60s
+2026-01-17 01:03:43,905 [INFO]    Collecting v1 chr7_0_10000000, 2 candidate events found. Time cost 74s
+2026-01-17 01:03:43,927 [INFO]    Collecting v1 chr7_30000000_40000000, 0 candidate events found. Time cost 65s
+2026-01-17 01:03:44,617 [INFO]    Collecting v1 chr9_50000000_60000000, 0 candidate events found. Time cost 34s
+2026-01-17 01:03:45,171 [INFO]    Collecting v1 chr4_180000000_190000000, 17 candidate events found. Time cost 126s
+2026-01-17 01:03:48,533 [INFO]    Collecting v1 chr9_60000000_70000000, 0 candidate events found. Time cost 37s
+2026-01-17 01:03:51,211 [INFO]    Collecting v1 chr7_80000000_90000000, 0 candidate events found. Time cost 68s
+2026-01-17 01:03:51,285 [INFO]    Collecting v1 chr7_40000000_50000000, 2 candidate events found. Time cost 73s
+2026-01-17 01:03:51,493 [INFO]    Collecting v1 chr7_50000000_60000000, 0 candidate events found. Time cost 73s
+2026-01-17 01:03:52,941 [INFO]    Collecting v1 chr7_70000000_80000000, 0 candidate events found. Time cost 73s
+2026-01-17 01:03:53,834 [INFO]    Collecting v1 chr7_110000000_120000000, 0 candidate events found. Time cost 68s
+2026-01-17 01:03:53,880 [INFO]    Collecting v1 chr7_140000000_150000000, 1 candidate events found. Time cost 67s
+2026-01-17 01:03:56,316 [INFO]    Collecting v1 chr7_120000000_130000000, 0 candidate events found. Time cost 70s
+2026-01-17 01:03:56,914 [INFO]    Collecting v1 chr7_90000000_100000000, 8 candidate events found. Time cost 74s
+2026-01-17 01:03:57,055 [INFO]    Collecting v1 chr7_20000000_30000000, 7 candidate events found. Time cost 82s
+2026-01-17 01:04:00,574 [INFO]    Collecting v1 chr7_100000000_110000000, 6 candidate events found. Time cost 76s
+2026-01-17 01:04:01,334 [INFO]    Collecting v1 chr8_0_10000000, 2 candidate events found. Time cost 70s
+2026-01-17 01:04:01,501 [INFO]    Collecting v1 chr8_50000000_60000000, 0 candidate events found. Time cost 66s
+2026-01-17 01:04:02,415 [INFO]    Collecting v1 chr8_20000000_30000000, 3 candidate events found. Time cost 70s
+2026-01-17 01:04:03,400 [INFO]    Collecting v1 chr8_100000000_110000000, 0 candidate events found. Time cost 66s
+2026-01-17 01:04:03,950 [INFO]    Collecting v1 chr8_90000000_100000000, 0 candidate events found. Time cost 67s
+2026-01-17 01:04:03,998 [INFO]    Collecting v1 chr8_60000000_70000000, 0 candidate events found. Time cost 68s
+2026-01-17 01:04:04,202 [INFO]    Collecting v1 chr8_10000000_20000000, 0 candidate events found. Time cost 72s
+2026-01-17 01:04:04,486 [INFO]    Collecting v1 chr8_70000000_80000000, 0 candidate events found. Time cost 69s
+2026-01-17 01:04:05,398 [INFO]    Collecting v1 chr8_30000000_40000000, 0 candidate events found. Time cost 72s
+2026-01-17 01:04:05,667 [INFO]    Collecting v1 chr8_40000000_50000000, 0 candidate events found. Time cost 71s
+2026-01-17 01:04:05,782 [INFO]    Collecting v1 chr8_110000000_120000000, 0 candidate events found. Time cost 68s
+2026-01-17 01:04:06,690 [INFO]    Collecting v1 chr8_120000000_130000000, 0 candidate events found. Time cost 67s
+2026-01-17 01:04:07,307 [INFO]    Collecting v1 chr8_130000000_140000000, 0 candidate events found. Time cost 67s
+2026-01-17 01:04:11,010 [INFO]    Collecting v1 chr8_80000000_90000000, 0 candidate events found. Time cost 75s
+2026-01-17 01:04:14,543 [INFO]    Collecting v1 chr9_10000000_20000000, 0 candidate events found. Time cost 68s
+2026-01-17 01:04:15,976 [INFO]    Collecting v1 chr7_130000000_140000000, 5 candidate events found. Time cost 89s
+2026-01-17 01:04:17,435 [INFO]    Collecting v1 chr9_0_10000000, 0 candidate events found. Time cost 71s
+2026-01-17 01:04:21,304 [INFO]    Collecting v1 chr9_70000000_80000000, 0 candidate events found. Time cost 66s
+2026-01-17 01:04:22,025 [INFO]    Collecting v1 chr9_20000000_30000000, 2 candidate events found. Time cost 73s
+2026-01-17 01:04:22,592 [INFO]    Collecting v1 chr9_30000000_40000000, 0 candidate events found. Time cost 73s
+2026-01-17 01:04:22,803 [INFO]    Collecting v1 chr8_140000000_150000000, 20 candidate events found. Time cost 79s
+2026-01-17 01:04:26,607 [INFO]    Collecting v1 chr9_80000000_90000000, 0 candidate events found. Time cost 70s
+2026-01-17 01:04:29,944 [INFO]    Collecting v1 chr9_90000000_100000000, 0 candidate events found. Time cost 72s
+2026-01-17 01:04:30,919 [INFO]    Collecting v1 chr9_110000000_120000000, 0 candidate events found. Time cost 71s
+2026-01-17 01:04:31,781 [INFO]    Collecting v1 chr9_130000000_140000000, 0 candidate events found. Time cost 71s
+2026-01-17 01:04:32,487 [INFO]    Collecting v1 chr9_120000000_130000000, 0 candidate events found. Time cost 72s
+2026-01-17 01:04:33,789 [INFO]    Collecting v1 chr9_100000000_110000000, 1 candidate events found. Time cost 76s
+2026-01-17 01:04:37,916 [INFO]    Collecting v1 chr7_150000000_160000000, 19 candidate events found. Time cost 110s
+2026-01-17 01:04:38,414 [INFO]    Collecting v1 chr9_40000000_50000000, 0 candidate events found. Time cost 88s
+2026-01-17 01:04:39,183 [INFO]    Collecting v1 chr11_130000000_140000000, 2 candidate events found. Time cost 34s
+2026-01-17 01:04:41,071 [INFO]    Collecting v1 chr10_0_10000000, 6 candidate events found. Time cost 72s
+2026-01-17 01:04:41,699 [INFO]    Collecting v1 chr10_20000000_30000000, 0 candidate events found. Time cost 70s
+2026-01-17 01:04:43,010 [INFO]    Collecting v1 chr10_10000000_20000000, 0 candidate events found. Time cost 71s
+2026-01-17 01:04:43,175 [INFO]    Collecting v1 chr10_30000000_40000000, 0 candidate events found. Time cost 70s
+2026-01-17 01:04:50,628 [INFO]    Collecting v1 chr10_60000000_70000000, 0 candidate events found. Time cost 66s
+2026-01-17 01:04:52,409 [INFO]    Collecting v1 chr10_50000000_60000000, 8 candidate events found. Time cost 73s
+2026-01-17 01:04:54,396 [INFO]    Collecting v1 chr12_130000000_140000000, 3 candidate events found. Time cost 31s
+2026-01-17 01:04:55,311 [INFO]    Collecting v1 chr10_40000000_50000000, 3 candidate events found. Time cost 79s
+2026-01-17 01:04:55,624 [INFO]    Collecting v1 chr13_110000000_120000000, 0 candidate events found. Time cost 12s
+2026-01-17 01:04:57,728 [INFO]    Collecting v1 chr10_90000000_100000000, 0 candidate events found. Time cost 72s
+2026-01-17 01:04:58,721 [INFO]    Collecting v1 chr10_80000000_90000000, 2 candidate events found. Time cost 74s
+2026-01-17 01:04:59,317 [INFO]    Collecting v1 chr10_100000000_110000000, 0 candidate events found. Time cost 70s
+2026-01-17 01:05:00,348 [INFO]    Collecting v1 chr10_70000000_80000000, 1 candidate events found. Time cost 76s
+2026-01-17 01:05:00,972 [INFO]    Collecting v1 chr10_110000000_120000000, 2 candidate events found. Time cost 69s
+2026-01-17 01:05:01,978 [INFO]    Collecting v1 chr11_20000000_30000000, 0 candidate events found. Time cost 68s
+2026-01-17 01:05:05,893 [INFO]    Collecting v1 chr11_40000000_50000000, 0 candidate events found. Time cost 68s
+2026-01-17 01:05:06,099 [INFO]    Collecting v1 chr13_30000000_40000000, 0 candidate events found. Time cost 34s
+2026-01-17 01:05:06,427 [INFO]    Collecting v1 chr10_120000000_130000000, 7 candidate events found. Time cost 75s
+2026-01-17 01:05:07,001 [INFO]    Collecting v1 chr11_100000000_110000000, 0 candidate events found. Time cost 63s
+2026-01-17 01:05:07,011 [INFO]    Collecting v1 chr11_30000000_40000000, 0 candidate events found. Time cost 70s
+2026-01-17 01:05:09,511 [INFO]    Collecting v1 chr13_50000000_60000000, 0 candidate events found. Time cost 35s
+2026-01-17 01:05:09,655 [INFO]    Collecting v1 chr13_40000000_50000000, 0 candidate events found. Time cost 37s
+2026-01-17 01:05:09,874 [INFO]    Collecting v1 chr11_120000000_130000000, 0 candidate events found. Time cost 65s
+2026-01-17 01:05:10,024 [INFO]    Collecting v1 chr13_70000000_80000000, 0 candidate events found. Time cost 31s
+2026-01-17 01:05:10,053 [INFO]    Collecting v1 chr13_0_10000000, 0 candidate events found. Time cost 43s
+2026-01-17 01:05:10,439 [INFO]    Collecting v1 chr11_50000000_60000000, 0 candidate events found. Time cost 73s
+2026-01-17 01:05:10,810 [INFO]    Collecting v1 chr11_80000000_90000000, 0 candidate events found. Time cost 69s
+2026-01-17 01:05:12,135 [INFO]    Collecting v1 chr11_10000000_20000000, 8 candidate events found. Time cost 78s
+2026-01-17 01:05:12,855 [INFO]    Collecting v1 chr11_90000000_100000000, 1 candidate events found. Time cost 70s
+2026-01-17 01:05:12,976 [INFO]    Collecting v1 chr13_20000000_30000000, 3 candidate events found. Time cost 42s
+2026-01-17 01:05:13,095 [INFO]    Collecting v1 chr11_110000000_120000000, 0 candidate events found. Time cost 69s
+2026-01-17 01:05:13,263 [INFO]    Collecting v1 chr13_60000000_70000000, 0 candidate events found. Time cost 35s
+2026-01-17 01:05:14,328 [INFO]    Collecting v1 chr14_100000000_110000000, 5 candidate events found. Time cost 13s
+2026-01-17 01:05:14,485 [INFO]    Collecting v1 chr13_80000000_90000000, 0 candidate events found. Time cost 35s
+2026-01-17 01:05:15,231 [INFO]    Collecting v1 chr12_30000000_40000000, 0 candidate events found. Time cost 69s
+2026-01-17 01:05:15,581 [INFO]    Collecting v1 chr12_40000000_50000000, 0 candidate events found. Time cost 68s
+2026-01-17 01:05:16,104 [INFO]    Collecting v1 chr12_20000000_30000000, 0 candidate events found. Time cost 70s
+2026-01-17 01:05:16,387 [INFO]    Collecting v1 chr13_100000000_110000000, 0 candidate events found. Time cost 34s
+2026-01-17 01:05:17,149 [INFO]    Collecting v1 chr13_90000000_100000000, 1 candidate events found. Time cost 36s
+2026-01-17 01:05:19,774 [INFO]    Collecting v1 chr12_50000000_60000000, 1 candidate events found. Time cost 72s
+2026-01-17 01:05:20,937 [INFO]    Collecting v1 chr12_60000000_70000000, 0 candidate events found. Time cost 69s
+2026-01-17 01:05:21,895 [INFO]    Collecting v1 chr12_10000000_20000000, 0 candidate events found. Time cost 76s
+2026-01-17 01:05:22,294 [INFO]    Collecting v1 chr12_0_10000000, 6 candidate events found. Time cost 77s
+2026-01-17 01:05:23,364 [INFO]    Collecting v1 chr9_140000000_150000000, 42 candidate events found. Time cost 119s
+2026-01-17 01:05:23,726 [INFO]    Collecting v1 chr12_70000000_80000000, 0 candidate events found. Time cost 69s
+2026-01-17 01:05:25,356 [INFO]    Collecting v1 chr11_0_10000000, 11 candidate events found. Time cost 92s
+2026-01-17 01:05:29,610 [INFO]    Collecting v1 chr12_90000000_100000000, 0 candidate events found. Time cost 72s
+2026-01-17 01:05:30,909 [INFO]    Collecting v1 chr13_10000000_20000000, 6 candidate events found. Time cost 60s
+2026-01-17 01:05:32,514 [INFO]    Collecting v1 chr12_100000000_110000000, 1 candidate events found. Time cost 71s
+2026-01-17 01:05:35,787 [INFO]    Collecting v1 chr12_80000000_90000000, 0 candidate events found. Time cost 79s
+2026-01-17 01:05:36,820 [INFO]    Collecting v1 chr11_70000000_80000000, 12 candidate events found. Time cost 95s
+2026-01-17 01:05:37,092 [INFO]    Collecting v1 chr17_0_10000000, 1 candidate events found. Time cost 21s
+2026-01-17 01:05:37,320 [INFO]    Collecting v1 chr12_110000000_120000000, 2 candidate events found. Time cost 75s
+2026-01-17 01:05:42,395 [INFO]    Collecting v1 chr18_80000000_90000000, 0 candidate events found. Time cost 5s
+2026-01-17 01:05:43,505 [INFO]    Collecting v1 chr6_160000000_170000000, 34 candidate events found. Time cost 195s
+2026-01-17 01:05:48,254 [INFO]    Collecting v1 chr11_60000000_70000000, 18 candidate events found. Time cost 107s
+2026-01-17 01:05:49,140 [INFO]    Collecting v1 chr17_10000000_20000000, 1 candidate events found. Time cost 33s
+2026-01-17 01:05:57,589 [INFO]    Collecting v1 chr14_10000000_20000000, 1 candidate events found. Time cost 66s
+2026-01-17 01:06:01,030 [INFO]    Collecting v1 chr14_20000000_30000000, 0 candidate events found. Time cost 68s
+2026-01-17 01:06:03,392 [INFO]    Collecting v1 chr14_50000000_60000000, 0 candidate events found. Time cost 67s
+2026-01-17 01:06:04,496 [INFO]    Collecting v1 chr14_30000000_40000000, 0 candidate events found. Time cost 69s
+2026-01-17 01:06:05,661 [INFO]    Collecting v1 chr16_90000000_100000000, 9 candidate events found. Time cost 51s
+2026-01-17 01:06:06,039 [INFO]    Collecting v1 chr14_40000000_50000000, 0 candidate events found. Time cost 70s
+2026-01-17 01:06:06,824 [INFO]    Collecting v1 chr14_70000000_80000000, 0 candidate events found. Time cost 68s
+2026-01-17 01:06:09,497 [INFO]    Collecting v1 chr15_0_10000000, 0 candidate events found. Time cost 67s
+2026-01-17 01:06:09,708 [INFO]    Collecting v1 chr14_60000000_70000000, 0 candidate events found. Time cost 71s
+2026-01-17 01:06:12,363 [INFO]    Collecting v1 chr17_80000000_90000000, 15 candidate events found. Time cost 50s
+2026-01-17 01:06:12,523 [INFO]    Collecting v1 chr16_40000000_50000000, 0 candidate events found. Time cost 59s
+2026-01-17 01:06:12,737 [INFO]    Collecting v1 chr14_80000000_90000000, 0 candidate events found. Time cost 73s
+2026-01-17 01:06:14,253 [INFO]    Collecting v1 chr15_10000000_20000000, 1 candidate events found. Time cost 68s
+2026-01-17 01:06:14,608 [INFO]    Collecting v1 chr17_20000000_30000000, 0 candidate events found. Time cost 58s
+2026-01-17 01:06:14,627 [INFO]    Collecting v1 chr15_90000000_100000000, 0 candidate events found. Time cost 64s
+2026-01-17 01:06:14,761 [INFO]    Collecting v1 chr15_40000000_50000000, 0 candidate events found. Time cost 67s
+2026-01-17 01:06:14,931 [INFO]    Collecting v1 chr15_30000000_40000000, 1 candidate events found. Time cost 68s
+2026-01-17 01:06:16,616 [INFO]    Collecting v1 chr14_0_10000000, 0 candidate events found. Time cost 93s
+2026-01-17 01:06:16,678 [INFO]    Collecting v1 chr14_90000000_100000000, 9 candidate events found. Time cost 76s
+2026-01-17 01:06:18,308 [INFO]    Collecting v1 chr15_50000000_60000000, 0 candidate events found. Time cost 71s
+2026-01-17 01:06:18,718 [INFO]    Collecting v1 chr19_60000000_70000000, 2 candidate events found. Time cost 17s
+2026-01-17 01:06:19,068 [INFO]    Collecting v1 chr15_70000000_80000000, 1 candidate events found. Time cost 69s
+2026-01-17 01:06:19,300 [INFO]    Collecting v1 chr15_80000000_90000000, 0 candidate events found. Time cost 69s
+2026-01-17 01:06:20,281 [INFO]    Collecting v1 chr16_50000000_60000000, 0 candidate events found. Time cost 67s
+2026-01-17 01:06:21,856 [INFO]    Collecting v1 chr15_20000000_30000000, 2 candidate events found. Time cost 75s
+2026-01-17 01:06:22,155 [INFO]    Collecting v1 chr16_60000000_70000000, 0 candidate events found. Time cost 69s
+2026-01-17 01:06:25,084 [INFO]    Collecting v1 chr16_80000000_90000000, 1 candidate events found. Time cost 70s
+2026-01-17 01:06:25,608 [INFO]    Collecting v1 chr16_10000000_20000000, 0 candidate events found. Time cost 75s
+2026-01-17 01:06:25,654 [INFO]    Collecting v1 chr16_70000000_80000000, 1 candidate events found. Time cost 72s
+2026-01-17 01:06:27,320 [INFO]    Collecting v1 chr16_30000000_40000000, 0 candidate events found. Time cost 75s
+2026-01-17 01:06:27,361 [INFO]    Collecting v1 chr18_10000000_20000000, 0 candidate events found. Time cost 63s
+2026-01-17 01:06:27,521 [INFO]    Collecting v1 chr17_30000000_40000000, 0 candidate events found. Time cost 71s
+2026-01-17 01:06:27,808 [INFO]    Collecting v1 chr16_20000000_30000000, 1 candidate events found. Time cost 76s
+2026-01-17 01:06:27,822 [INFO]    Collecting v1 chr17_40000000_50000000, 0 candidate events found. Time cost 70s
+2026-01-17 01:06:28,254 [INFO]    Collecting v1 chr16_0_10000000, 12 candidate events found. Time cost 78s
+2026-01-17 01:06:29,821 [INFO]    Collecting v1 chr17_50000000_60000000, 1 candidate events found. Time cost 70s
+2026-01-17 01:06:30,964 [INFO]    Collecting v1 chr17_60000000_70000000, 1 candidate events found. Time cost 70s
+2026-01-17 01:06:35,704 [INFO]    Collecting v1 chr18_0_10000000, 2 candidate events found. Time cost 72s
+2026-01-17 01:06:36,023 [INFO]    Collecting v1 chr17_70000000_80000000, 3 candidate events found. Time cost 74s
+2026-01-17 01:06:36,758 [INFO]    Collecting v1 chr18_20000000_30000000, 0 candidate events found. Time cost 71s
+2026-01-17 01:06:36,771 [INFO]    Collecting v1 chr22_50000000_60000000, 5 candidate events found. Time cost 18s
+2026-01-17 01:06:40,197 [INFO]    Collecting v1 chr18_40000000_50000000, 0 candidate events found. Time cost 69s
+2026-01-17 01:06:40,966 [INFO]    Collecting v1 chr18_30000000_40000000, 0 candidate events found. Time cost 71s
+2026-01-17 01:06:44,640 [INFO]    Collecting v1 chr18_50000000_60000000, 1 candidate events found. Time cost 72s
+2026-01-17 01:06:45,440 [INFO]    Collecting v1 chrM_0_10000000, 0 candidate events found. Time cost 0s
+2026-01-17 01:06:49,922 [INFO]    Collecting v1 chr18_70000000_80000000, 5 candidate events found. Time cost 73s
+2026-01-17 01:06:53,357 [INFO]    Collecting v1 chr18_60000000_70000000, 0 candidate events found. Time cost 77s
+2026-01-17 01:06:55,093 [INFO]    Collecting v1 chr15_60000000_70000000, 12 candidate events found. Time cost 105s
+2026-01-17 01:06:58,444 [INFO]    Collecting v1 chrX_150000000_160000000, 1 candidate events found. Time cost 28s
+2026-01-17 01:06:59,360 [INFO]    Collecting v1 chrY_60000000_70000000, 0 candidate events found. Time cost 18s
+2026-01-17 01:07:00,568 [INFO]    Collecting v1 chr20_60000000_70000000, 11 candidate events found. Time cost 50s
+2026-01-17 01:07:02,462 [INFO]    Collecting v1 chr19_0_10000000, 9 candidate events found. Time cost 85s
+2026-01-17 01:07:06,058 [INFO]    Collecting v1 chr19_30000000_40000000, 2 candidate events found. Time cost 77s
+2026-01-17 01:07:06,431 [INFO]    Collecting v1 chr19_40000000_50000000, 4 candidate events found. Time cost 77s
+2026-01-17 01:07:09,636 [INFO]    Collecting v1 chr19_50000000_60000000, 0 candidate events found. Time cost 72s
+2026-01-17 01:07:11,503 [INFO]    Collecting v1 chr21_30000000_40000000, 1 candidate events found. Time cost 57s
+2026-01-17 01:07:12,918 [INFO]    Collecting v1 chr20_40000000_50000000, 0 candidate events found. Time cost 66s
+2026-01-17 01:07:13,336 [INFO]    Collecting v1 chr19_10000000_20000000, 16 candidate events found. Time cost 90s
+2026-01-17 01:07:14,241 [INFO]    Collecting v1 chr20_10000000_20000000, 0 candidate events found. Time cost 69s
+2026-01-17 01:07:16,359 [INFO]    Collecting v1 chr21_10000000_20000000, 0 candidate events found. Time cost 63s
+2026-01-17 01:07:17,392 [INFO]    Collecting v1 chr20_0_10000000, 7 candidate events found. Time cost 73s
+2026-01-17 01:07:18,558 [INFO]    Collecting v1 chrX_90000000_100000000, 0 candidate events found. Time cost 51s
+2026-01-17 01:07:18,883 [INFO]    Collecting v1 chrY_50000000_60000000, 0 candidate events found. Time cost 38s
+2026-01-17 01:07:19,397 [INFO]    Collecting v1 chrX_10000000_20000000, 0 candidate events found. Time cost 60s
+2026-01-17 01:07:20,146 [INFO]    Collecting v1 chrY_30000000_40000000, 0 candidate events found. Time cost 43s
+2026-01-17 01:07:20,238 [INFO]    Collecting v1 chr20_20000000_30000000, 0 candidate events found. Time cost 74s
+2026-01-17 01:07:20,443 [INFO]    Collecting v1 chr21_20000000_30000000, 0 candidate events found. Time cost 67s
+2026-01-17 01:07:20,453 [INFO]    Collecting v1 chr20_30000000_40000000, 5 candidate events found. Time cost 74s
+2026-01-17 01:07:20,554 [INFO]    Collecting v1 chr19_20000000_30000000, 11 candidate events found. Time cost 96s
+2026-01-17 01:07:20,711 [INFO]    Collecting v1 chrX_120000000_130000000, 0 candidate events found. Time cost 52s
+2026-01-17 01:07:20,908 [INFO]    Collecting v1 chrY_0_10000000, 0 candidate events found. Time cost 49s
+2026-01-17 01:07:21,282 [INFO]    Collecting v1 chr22_20000000_30000000, 4 candidate events found. Time cost 66s
+2026-01-17 01:07:22,813 [INFO]    Collecting v1 chrX_20000000_30000000, 0 candidate events found. Time cost 63s
+2026-01-17 01:07:23,453 [INFO]    Collecting v1 chrY_40000000_50000000, 0 candidate events found. Time cost 46s
+2026-01-17 01:07:23,509 [INFO]    Collecting v1 chrX_100000000_110000000, 0 candidate events found. Time cost 56s
+2026-01-17 01:07:23,810 [INFO]    Collecting v1 chr20_50000000_60000000, 12 candidate events found. Time cost 74s
+2026-01-17 01:07:23,955 [INFO]    Collecting v1 chr21_40000000_50000000, 22 candidate events found. Time cost 69s
+2026-01-17 01:07:24,149 [INFO]    Collecting v1 chrX_50000000_60000000, 0 candidate events found. Time cost 61s
+2026-01-17 01:07:24,888 [INFO]    Collecting v1 chrX_130000000_140000000, 0 candidate events found. Time cost 57s
+2026-01-17 01:07:25,333 [INFO]    Collecting v1 chrY_20000000_30000000, 0 candidate events found. Time cost 49s
+2026-01-17 01:07:25,783 [INFO]    Collecting v1 chr21_0_10000000, 0 candidate events found. Time cost 73s
+2026-01-17 01:07:25,945 [INFO]    Collecting v1 chr22_10000000_20000000, 1 candidate events found. Time cost 71s
+2026-01-17 01:07:26,464 [INFO]    Collecting v1 chr22_30000000_40000000, 7 candidate events found. Time cost 69s
+2026-01-17 01:07:26,650 [INFO]    Collecting v1 chrX_60000000_70000000, 0 candidate events found. Time cost 61s
+2026-01-17 01:07:26,858 [INFO]    Collecting v1 chrX_40000000_50000000, 1 candidate events found. Time cost 64s
+2026-01-17 01:07:26,899 [INFO]    Collecting v1 chrX_80000000_90000000, 1 candidate events found. Time cost 61s
+2026-01-17 01:07:27,641 [INFO]    Collecting v1 chrX_30000000_40000000, 2 candidate events found. Time cost 67s
+2026-01-17 01:07:28,933 [INFO]    Collecting v1 chr22_0_10000000, 0 candidate events found. Time cost 74s
+2026-01-17 01:07:30,335 [INFO]    Collecting v1 chrX_110000000_120000000, 0 candidate events found. Time cost 62s
+2026-01-17 01:07:30,658 [INFO]    Collecting v1 chrX_140000000_150000000, 1 candidate events found. Time cost 62s
+2026-01-17 01:07:31,616 [INFO]    Collecting v1 chrX_70000000_80000000, 0 candidate events found. Time cost 65s
+2026-01-17 01:07:34,286 [INFO]    Collecting v1 chr22_40000000_50000000, 11 candidate events found. Time cost 77s
+2026-01-17 01:07:34,910 [INFO]    Collecting v1 chrY_10000000_20000000, 0 candidate events found. Time cost 59s
+2026-01-17 01:07:42,601 [INFO]    Collecting v1 chrX_0_10000000, 15 candidate events found. Time cost 83s
+2026-01-17 01:07:46,155 [INFO]    Collecting v1 chr12_120000000_130000000, 25 candidate events found. Time cost 203s
+2026-01-17 01:08:22,080 [INFO]    Collecting v1 chr10_130000000_140000000, 24 candidate events found. Time cost 270s
+2026-01-17 01:08:22,295 [INFO]    Collecting Time Cost 508s
+2026-01-17 01:08:22,295 [INFO]    ****************** Step2 lite-Unet predicting **************************
+2026-01-17 01:08:22,382 [INFO]    Predicting v1 chr1_40000000_50000000, 0 events pass lite-Unet module. Time cost: 0s
+2026-01-17 01:08:22,382 [INFO]    Predicting v1 chr1_100000000_110000000, 0 events pass lite-Unet module. Time cost: 0s
+2026-01-17 01:08:22,382 [INFO]    Predicting v1 chr1_120000000_130000000, 0 events pass lite-Unet module. Time cost: 0s
+2026-01-17 01:08:22,382 [INFO]    Predicting v1 chr1_60000000_70000000, 0 events pass lite-Unet module. Time cost: 0s
+2026-01-17 01:08:22,382 [INFO]    Predicting v1 chr1_20000000_30000000, 0 events pass lite-Unet module. Time cost: 0s
+2026-01-17 01:08:22,382 [INFO]    Predicting v1 chr1_30000000_40000000, 0 events pass lite-Unet module. Time cost: 0s
+2026-01-17 01:08:22,383 [INFO]    Predicting v1 chr1_90000000_100000000, 0 events pass lite-Unet module. Time cost: 0s
+2026-01-17 01:08:22,383 [INFO]    Predicting v1 chr1_80000000_90000000, 0 events pass lite-Unet module. Time cost: 0s
+2026-01-17 01:08:22,383 [INFO]    Predicting v1 chr1_130000000_140000000, 0 events pass lite-Unet module. Time cost: 0s
+2026-01-17 01:08:22,383 [INFO]    Predicting v1 chr1_70000000_80000000, 0 events pass lite-Unet module. Time cost: 0s
+2026-01-17 01:08:22,383 [INFO]    Predicting v1 chr1_50000000_60000000, 0 events pass lite-Unet module. Time cost: 0s
+2026-01-17 01:08:22,383 [INFO]    Predicting v1 chr1_180000000_190000000, 0 events pass lite-Unet module. Time cost: 0s
+2026-01-17 01:08:22,383 [INFO]    Predicting v1 chr1_160000000_170000000, 0 events pass lite-Unet module. Time cost: 0s
+2026-01-17 01:08:22,383 [INFO]    Predicting v1 chr1_190000000_200000000, 0 events pass lite-Unet module. Time cost: 0s
+2026-01-17 01:08:22,384 [INFO]    Predicting v1 chr1_200000000_210000000, 0 events pass lite-Unet module. Time cost: 0s
+2026-01-17 01:08:22,384 [INFO]    Predicting v1 chr1_170000000_180000000, 0 events pass lite-Unet module. Time cost: 0s
+2026-01-17 01:08:22,384 [INFO]    Predicting v1 chr1_210000000_220000000, 0 events pass lite-Unet module. Time cost: 0s
+2026-01-17 01:08:22,384 [INFO]    Predicting v1 chr1_220000000_230000000, 0 events pass lite-Unet module. Time cost: 0s
+2026-01-17 01:08:22,387 [INFO]    Predicting v1 chr2_10000000_20000000, 0 events pass lite-Unet module. Time cost: 0s
+2026-01-17 01:08:22,388 [INFO]    Predicting v1 chr2_40000000_50000000, 0 events pass lite-Unet module. Time cost: 0s
+2026-01-17 01:08:22,388 [INFO]    Predicting v1 chr2_50000000_60000000, 0 events pass lite-Unet module. Time cost: 0s
+2026-01-17 01:08:22,388 [INFO]    Predicting v1 chr2_150000000_160000000, 0 events pass lite-Unet module. Time cost: 0s
+2026-01-17 01:08:22,388 [INFO]    Predicting v1 chr2_100000000_110000000, 0 events pass lite-Unet module. Time cost: 0s
+2026-01-17 01:08:22,388 [INFO]    Predicting v1 chr2_20000000_30000000, 0 events pass lite-Unet module. Time cost: 0s
+2026-01-17 01:08:22,389 [INFO]    Predicting v1 chr2_160000000_170000000, 0 events pass lite-Unet module. Time cost: 0s
+2026-01-17 01:08:22,391 [INFO]    Predicting v1 chr2_190000000_200000000, 0 events pass lite-Unet module. Time cost: 0s
+2026-01-17 01:08:22,392 [INFO]    Predicting v1 chr2_220000000_230000000, 0 events pass lite-Unet module. Time cost: 0s
+2026-01-17 01:08:22,393 [INFO]    Predicting v1 chr2_200000000_210000000, 0 events pass lite-Unet module. Time cost: 0s
+2026-01-17 01:08:22,395 [INFO]    Predicting v1 chr3_10000000_20000000, 0 events pass lite-Unet module. Time cost: 0s
+2026-01-17 01:08:22,395 [INFO]    Predicting v1 chr3_0_10000000, 0 events pass lite-Unet module. Time cost: 0s
+2026-01-17 01:08:22,403 [INFO]    Predicting v1 chr3_20000000_30000000, 0 events pass lite-Unet module. Time cost: 0s
+2026-01-17 01:08:22,406 [INFO]    Predicting v1 chr2_30000000_40000000, 0 events pass lite-Unet module. Time cost: 0s
+2026-01-17 01:08:22,410 [INFO]    Predicting v1 chr3_70000000_80000000, 0 events pass lite-Unet module. Time cost: 0s
+2026-01-17 01:08:22,410 [INFO]    Predicting v1 chr3_50000000_60000000, 0 events pass lite-Unet module. Time cost: 0s
+2026-01-17 01:08:22,411 [INFO]    Predicting v1 chr2_80000000_90000000, 7 events pass lite-Unet module. Time cost: 0s
+2026-01-17 01:08:22,411 [INFO]    Predicting v1 chr2_130000000_140000000, 0 events pass lite-Unet module. Time cost: 0s
+2026-01-17 01:08:22,413 [INFO]    Predicting v1 chr3_80000000_90000000, 0 events pass lite-Unet module. Time cost: 0s
+2026-01-17 01:08:22,414 [INFO]    Predicting v1 chr3_90000000_100000000, 0 events pass lite-Unet module. Time cost: 0s
+2026-01-17 01:08:22,415 [INFO]    Predicting v1 chr3_100000000_110000000, 0 events pass lite-Unet module. Time cost: 0s
+2026-01-17 01:08:22,418 [INFO]    Predicting v1 chr3_110000000_120000000, 0 events pass lite-Unet module. Time cost: 0s
+2026-01-17 01:08:22,419 [INFO]    Predicting v1 chr2_180000000_190000000, 0 events pass lite-Unet module. Time cost: 0s
+2026-01-17 01:08:22,421 [INFO]    Predicting v1 chr3_150000000_160000000, 0 events pass lite-Unet module. Time cost: 0s
+2026-01-17 01:08:22,426 [INFO]    Predicting v1 chr3_140000000_150000000, 0 events pass lite-Unet module. Time cost: 0s
+2026-01-17 01:08:22,428 [INFO]    Predicting v1 chr3_160000000_170000000, 0 events pass lite-Unet module. Time cost: 0s
+2026-01-17 01:08:22,429 [INFO]    Predicting v1 chr3_180000000_190000000, 0 events pass lite-Unet module. Time cost: 0s
+2026-01-17 01:08:22,432 [INFO]    Predicting v1 chr3_200000000_210000000, 0 events pass lite-Unet module. Time cost: 0s
+2026-01-17 01:08:22,440 [INFO]    Predicting v1 chr3_120000000_130000000, 0 events pass lite-Unet module. Time cost: 0s
+2026-01-17 01:08:22,452 [INFO]    Predicting v1 chr3_170000000_180000000, 0 events pass lite-Unet module. Time cost: 0s
+2026-01-17 01:08:22,533 [INFO]    Predicting v1 chr4_20000000_30000000, 0 events pass lite-Unet module. Time cost: 0s
+2026-01-17 01:08:22,659 [INFO]    Predicting v1 chr4_30000000_40000000, 0 events pass lite-Unet module. Time cost: 0s
+2026-01-17 01:08:22,859 [INFO]    Predicting v1 chr4_40000000_50000000, 0 events pass lite-Unet module. Time cost: 0s
+2026-01-17 01:08:22,955 [INFO]    Predicting v1 chr4_50000000_60000000, 0 events pass lite-Unet module. Time cost: 0s
+2026-01-17 01:08:23,067 [INFO]    Predicting v1 chr4_60000000_70000000, 0 events pass lite-Unet module. Time cost: 0s
+2026-01-17 01:08:23,349 [INFO]    Predicting v1 chr2_70000000_80000000, 1 events pass lite-Unet module. Time cost: 0s
+2026-01-17 01:08:23,355 [INFO]    Predicting v1 chr4_80000000_90000000, 0 events pass lite-Unet module. Time cost: 0s
+2026-01-17 01:08:23,360 [INFO]    Predicting v1 chr4_90000000_100000000, 0 events pass lite-Unet module. Time cost: 0s
+2026-01-17 01:08:23,366 [INFO]    Predicting v1 chr4_100000000_110000000, 0 events pass lite-Unet module. Time cost: 0s
+2026-01-17 01:08:23,571 [INFO]    Predicting v1 chr2_210000000_220000000, 1 events pass lite-Unet module. Time cost: 1s
+2026-01-17 01:08:23,578 [INFO]    Predicting v1 chr4_120000000_130000000, 0 events pass lite-Unet module. Time cost: 0s
+2026-01-17 01:08:23,585 [INFO]    Predicting v1 chr4_130000000_140000000, 0 events pass lite-Unet module. Time cost: 0s
+2026-01-17 01:08:23,733 [INFO]    Predicting v1 chr4_110000000_120000000, 1 events pass lite-Unet module. Time cost: 0s
+2026-01-17 01:08:23,743 [INFO]    Predicting v1 chr4_150000000_160000000, 0 events pass lite-Unet module. Time cost: 0s
+2026-01-17 01:08:23,751 [INFO]    Predicting v1 chr4_160000000_170000000, 0 events pass lite-Unet module. Time cost: 0s
+2026-01-17 01:08:23,760 [INFO]    Predicting v1 chr4_170000000_180000000, 0 events pass lite-Unet module. Time cost: 0s
+2026-01-17 01:08:23,816 [INFO]    Predicting v1 chr1_240000000_250000000, 9 events pass lite-Unet module. Time cost: 1s
+2026-01-17 01:08:23,824 [INFO]    Predicting v1 chr4_190000000_200000000, 0 events pass lite-Unet module. Time cost: 0s
+2026-01-17 01:08:23,912 [INFO]    Predicting v1 chr3_130000000_140000000, 1 events pass lite-Unet module. Time cost: 1s
+2026-01-17 01:08:23,918 [INFO]    Predicting v1 chr5_10000000_20000000, 0 events pass lite-Unet module. Time cost: 0s
+2026-01-17 01:08:23,929 [INFO]    Predicting v1 chr5_20000000_30000000, 0 events pass lite-Unet module. Time cost: 0s
+2026-01-17 01:08:23,934 [INFO]    Predicting v1 chr5_30000000_40000000, 0 events pass lite-Unet module. Time cost: 0s
+2026-01-17 01:08:23,938 [INFO]    Predicting v1 chr5_40000000_50000000, 0 events pass lite-Unet module. Time cost: 0s
+2026-01-17 01:08:23,944 [INFO]    Predicting v1 chr5_50000000_60000000, 0 events pass lite-Unet module. Time cost: 0s
+2026-01-17 01:08:23,946 [INFO]    Predicting v1 chr4_140000000_150000000, 1 events pass lite-Unet module. Time cost: 0s
+2026-01-17 01:08:23,949 [INFO]    Predicting v1 chr4_10000000_20000000, 1 events pass lite-Unet module. Time cost: 1s
+2026-01-17 01:08:23,953 [INFO]    Predicting v1 chr5_60000000_70000000, 0 events pass lite-Unet module. Time cost: 0s
+2026-01-17 01:08:23,953 [INFO]    Predicting v1 chr5_70000000_80000000, 0 events pass lite-Unet module. Time cost: 0s
+2026-01-17 01:08:23,957 [INFO]    Predicting v1 chr5_90000000_100000000, 0 events pass lite-Unet module. Time cost: 0s
+2026-01-17 01:08:23,958 [INFO]    Predicting v1 chr5_80000000_90000000, 0 events pass lite-Unet module. Time cost: 0s
+2026-01-17 01:08:23,961 [INFO]    Predicting v1 chr5_100000000_110000000, 0 events pass lite-Unet module. Time cost: 0s
+2026-01-17 01:08:23,963 [INFO]    Predicting v1 chr5_110000000_120000000, 0 events pass lite-Unet module. Time cost: 0s
+2026-01-17 01:08:23,964 [INFO]    Predicting v1 chr5_120000000_130000000, 0 events pass lite-Unet module. Time cost: 0s
+2026-01-17 01:08:23,968 [INFO]    Predicting v1 chr5_130000000_140000000, 0 events pass lite-Unet module. Time cost: 0s
+2026-01-17 01:08:23,969 [INFO]    Predicting v1 chr5_140000000_150000000, 0 events pass lite-Unet module. Time cost: 0s
+2026-01-17 01:08:23,971 [INFO]    Predicting v1 chr5_150000000_160000000, 0 events pass lite-Unet module. Time cost: 0s
+2026-01-17 01:08:23,977 [INFO]    Predicting v1 chr5_160000000_170000000, 0 events pass lite-Unet module. Time cost: 0s
+2026-01-17 01:08:23,994 [INFO]    Predicting v1 chr5_180000000_190000000, 0 events pass lite-Unet module. Time cost: 0s
+2026-01-17 01:08:24,012 [INFO]    Predicting v1 chr2_140000000_150000000, 1 events pass lite-Unet module. Time cost: 1s
+2026-01-17 01:08:24,024 [INFO]    Predicting v1 chr6_20000000_30000000, 0 events pass lite-Unet module. Time cost: 0s
+2026-01-17 01:08:24,031 [INFO]    Predicting v1 chr6_30000000_40000000, 0 events pass lite-Unet module. Time cost: 0s
+2026-01-17 01:08:24,038 [INFO]    Predicting v1 chr6_40000000_50000000, 0 events pass lite-Unet module. Time cost: 0s
+2026-01-17 01:08:24,046 [INFO]    Predicting v1 chr6_50000000_60000000, 0 events pass lite-Unet module. Time cost: 0s
+2026-01-17 01:08:24,108 [INFO]    Predicting v1 chr4_70000000_80000000, 5 events pass lite-Unet module. Time cost: 0s
+2026-01-17 01:08:24,115 [INFO]    Predicting v1 chr6_70000000_80000000, 0 events pass lite-Unet module. Time cost: 0s
+2026-01-17 01:08:24,115 [INFO]    Predicting v1 chr3_60000000_70000000, 1 events pass lite-Unet module. Time cost: 1s
+2026-01-17 01:08:24,123 [INFO]    Predicting v1 chr6_80000000_90000000, 0 events pass lite-Unet module. Time cost: 0s
+2026-01-17 01:08:24,123 [INFO]    Predicting v1 chr6_90000000_100000000, 0 events pass lite-Unet module. Time cost: 0s
+2026-01-17 01:08:24,131 [INFO]    Predicting v1 chr6_100000000_110000000, 0 events pass lite-Unet module. Time cost: 0s
+2026-01-17 01:08:24,132 [INFO]    Predicting v1 chr6_110000000_120000000, 0 events pass lite-Unet module. Time cost: 0s
+2026-01-17 01:08:24,140 [INFO]    Predicting v1 chr6_130000000_140000000, 0 events pass lite-Unet module. Time cost: 0s
+2026-01-17 01:08:24,140 [INFO]    Predicting v1 chr6_120000000_130000000, 0 events pass lite-Unet module. Time cost: 0s
+2026-01-17 01:08:24,148 [INFO]    Predicting v1 chr6_140000000_150000000, 2 events pass lite-Unet module. Time cost: 0s
+2026-01-17 01:08:24,149 [INFO]    Predicting v1 chr6_150000000_160000000, 2 events pass lite-Unet module. Time cost: 0s
+2026-01-17 01:08:24,157 [INFO]    Predicting v1 chr6_170000000_180000000, 0 events pass lite-Unet module. Time cost: 0s
+2026-01-17 01:08:24,286 [INFO]    Predicting v1 chr3_40000000_50000000, 2 events pass lite-Unet module. Time cost: 1s
+2026-01-17 01:08:24,293 [INFO]    Predicting v1 chr7_10000000_20000000, 0 events pass lite-Unet module. Time cost: 0s
+2026-01-17 01:08:24,329 [INFO]    Predicting v1 chr6_0_10000000, 2 events pass lite-Unet module. Time cost: 0s
+2026-01-17 01:08:24,337 [INFO]    Predicting v1 chr7_30000000_40000000, 0 events pass lite-Unet module. Time cost: 0s
+2026-01-17 01:08:24,515 [INFO]    Predicting v1 chr3_30000000_40000000, 3 events pass lite-Unet module. Time cost: 2s
+2026-01-17 01:08:24,526 [INFO]    Predicting v1 chr7_50000000_60000000, 0 events pass lite-Unet module. Time cost: 0s
+2026-01-17 01:08:24,535 [INFO]    Predicting v1 chr7_60000000_70000000, 0 events pass lite-Unet module. Time cost: 0s
+2026-01-17 01:08:24,544 [INFO]    Predicting v1 chr7_70000000_80000000, 0 events pass lite-Unet module. Time cost: 0s
+2026-01-17 01:08:24,555 [INFO]    Predicting v1 chr7_80000000_90000000, 0 events pass lite-Unet module. Time cost: 0s
+2026-01-17 01:08:24,654 [INFO]    Predicting v1 chr1_10000000_20000000, 3 events pass lite-Unet module. Time cost: 2s
+2026-01-17 01:08:24,789 [INFO]    Predicting v1 chr7_0_10000000, 2 events pass lite-Unet module. Time cost: 0s
+2026-01-17 01:08:24,798 [INFO]    Predicting v1 chr7_110000000_120000000, 0 events pass lite-Unet module. Time cost: 0s
+2026-01-17 01:08:24,803 [INFO]    Predicting v1 chr7_120000000_130000000, 0 events pass lite-Unet module. Time cost: 0s
+2026-01-17 01:08:24,840 [INFO]    Predicting v1 chr2_170000000_180000000, 2 events pass lite-Unet module. Time cost: 2s
+2026-01-17 01:08:24,865 [INFO]    Predicting v1 chr5_170000000_180000000, 1 events pass lite-Unet module. Time cost: 0s
+2026-01-17 01:08:24,955 [INFO]    Predicting v1 chr1_140000000_150000000, 2 events pass lite-Unet module. Time cost: 2s
+2026-01-17 01:08:24,971 [INFO]    Predicting v1 chr6_10000000_20000000, 6 events pass lite-Unet module. Time cost: 0s
+2026-01-17 01:08:25,080 [INFO]    Predicting v1 chr7_40000000_50000000, 2 events pass lite-Unet module. Time cost: 0s
+2026-01-17 01:08:25,088 [INFO]    Predicting v1 chr8_10000000_20000000, 0 events pass lite-Unet module. Time cost: 0s
+2026-01-17 01:08:25,253 [INFO]    Predicting v1 chr2_230000000_240000000, 26 events pass lite-Unet module. Time cost: 2s
+2026-01-17 01:08:25,281 [INFO]    Predicting v1 chr8_30000000_40000000, 0 events pass lite-Unet module. Time cost: 0s
+2026-01-17 01:08:25,302 [INFO]    Predicting v1 chr8_40000000_50000000, 0 events pass lite-Unet module. Time cost: 0s
+2026-01-17 01:08:25,311 [INFO]    Predicting v1 chr8_50000000_60000000, 0 events pass lite-Unet module. Time cost: 0s
+2026-01-17 01:08:25,327 [INFO]    Predicting v1 chr8_60000000_70000000, 0 events pass lite-Unet module. Time cost: 0s
+2026-01-17 01:08:25,346 [INFO]    Predicting v1 chr8_70000000_80000000, 0 events pass lite-Unet module. Time cost: 0s
+2026-01-17 01:08:25,356 [INFO]    Predicting v1 chr8_80000000_90000000, 0 events pass lite-Unet module. Time cost: 0s
+2026-01-17 01:08:25,362 [INFO]    Predicting v1 chr8_90000000_100000000, 0 events pass lite-Unet module. Time cost: 0s
+2026-01-17 01:08:25,384 [INFO]    Predicting v1 chr8_100000000_110000000, 0 events pass lite-Unet module. Time cost: 0s
+2026-01-17 01:08:25,391 [INFO]    Predicting v1 chr8_110000000_120000000, 0 events pass lite-Unet module. Time cost: 0s
+2026-01-17 01:08:25,397 [INFO]    Predicting v1 chr8_120000000_130000000, 0 events pass lite-Unet module. Time cost: 0s
+2026-01-17 01:08:25,413 [INFO]    Predicting v1 chr8_130000000_140000000, 0 events pass lite-Unet module. Time cost: 0s
+2026-01-17 01:08:25,540 [INFO]    Predicting v1 chr6_60000000_70000000, 5 events pass lite-Unet module. Time cost: 1s
+2026-01-17 01:08:25,553 [INFO]    Predicting v1 chr9_0_10000000, 0 events pass lite-Unet module. Time cost: 0s
+2026-01-17 01:08:25,562 [INFO]    Predicting v1 chr9_10000000_20000000, 0 events pass lite-Unet module. Time cost: 0s
+2026-01-17 01:08:25,575 [INFO]    Predicting v1 chr9_20000000_30000000, 2 events pass lite-Unet module. Time cost: 0s
+2026-01-17 01:08:25,584 [INFO]    Predicting v1 chr9_30000000_40000000, 0 events pass lite-Unet module. Time cost: 0s
+2026-01-17 01:08:25,593 [INFO]    Predicting v1 chr9_40000000_50000000, 0 events pass lite-Unet module. Time cost: 0s
+2026-01-17 01:08:25,603 [INFO]    Predicting v1 chr9_50000000_60000000, 0 events pass lite-Unet module. Time cost: 0s
+2026-01-17 01:08:25,612 [INFO]    Predicting v1 chr9_60000000_70000000, 0 events pass lite-Unet module. Time cost: 0s
+2026-01-17 01:08:25,620 [INFO]    Predicting v1 chr9_70000000_80000000, 0 events pass lite-Unet module. Time cost: 0s
+2026-01-17 01:08:25,626 [INFO]    Predicting v1 chr9_80000000_90000000, 0 events pass lite-Unet module. Time cost: 0s
+2026-01-17 01:08:25,633 [INFO]    Predicting v1 chr9_90000000_100000000, 0 events pass lite-Unet module. Time cost: 0s
+2026-01-17 01:08:25,667 [INFO]    Predicting v1 chr7_140000000_150000000, 1 events pass lite-Unet module. Time cost: 0s
+2026-01-17 01:08:25,675 [INFO]    Predicting v1 chr9_110000000_120000000, 0 events pass lite-Unet module. Time cost: 0s
+2026-01-17 01:08:25,680 [INFO]    Predicting v1 chr9_120000000_130000000, 0 events pass lite-Unet module. Time cost: 0s
+2026-01-17 01:08:25,687 [INFO]    Predicting v1 chr9_130000000_140000000, 0 events pass lite-Unet module. Time cost: 0s
+2026-01-17 01:08:25,802 [INFO]    Predicting v1 chr1_230000000_240000000, 4 events pass lite-Unet module. Time cost: 3s
+2026-01-17 01:08:25,811 [INFO]    Predicting v1 chr9_150000000_160000000, 1 events pass lite-Unet module. Time cost: 0s
+2026-01-17 01:08:25,945 [INFO]    Predicting v1 chr7_90000000_100000000, 8 events pass lite-Unet module. Time cost: 1s
+2026-01-17 01:08:25,947 [INFO]    Predicting v1 chr7_20000000_30000000, 7 events pass lite-Unet module. Time cost: 1s
+2026-01-17 01:08:25,954 [INFO]    Predicting v1 chr10_10000000_20000000, 0 events pass lite-Unet module. Time cost: 0s
+2026-01-17 01:08:25,960 [INFO]    Predicting v1 chr10_30000000_40000000, 0 events pass lite-Unet module. Time cost: 0s
+2026-01-17 01:08:25,960 [INFO]    Predicting v1 chr10_20000000_30000000, 0 events pass lite-Unet module. Time cost: 0s
+2026-01-17 01:08:25,971 [INFO]    Predicting v1 chr8_20000000_30000000, 3 events pass lite-Unet module. Time cost: 0s
+2026-01-17 01:08:25,978 [INFO]    Predicting v1 chr10_60000000_70000000, 0 events pass lite-Unet module. Time cost: 0s
+2026-01-17 01:08:25,997 [INFO]    Predicting v1 chr8_0_10000000, 2 events pass lite-Unet module. Time cost: 1s
+2026-01-17 01:08:26,087 [INFO]    Predicting v1 chr9_100000000_110000000, 1 events pass lite-Unet module. Time cost: 0s
+2026-01-17 01:08:26,095 [INFO]    Predicting v1 chr10_90000000_100000000, 0 events pass lite-Unet module. Time cost: 0s
+2026-01-17 01:08:26,102 [INFO]    Predicting v1 chr10_100000000_110000000, 0 events pass lite-Unet module. Time cost: 0s
+2026-01-17 01:08:26,293 [INFO]    Predicting v1 chr10_70000000_80000000, 1 events pass lite-Unet module. Time cost: 0s
+2026-01-17 01:08:26,301 [INFO]    Predicting v1 chr5_0_10000000, 6 events pass lite-Unet module. Time cost: 2s
+2026-01-17 01:08:26,381 [INFO]    Predicting v1 chr10_50000000_60000000, 8 events pass lite-Unet module. Time cost: 0s
+2026-01-17 01:08:26,438 [INFO]    Predicting v1 chr2_60000000_70000000, 5 events pass lite-Unet module. Time cost: 4s
+2026-01-17 01:08:26,481 [INFO]    Predicting v1 chr7_160000000_170000000, 2 events pass lite-Unet module. Time cost: 1s
+2026-01-17 01:08:26,485 [INFO]    Predicting v1 chr11_20000000_30000000, 0 events pass lite-Unet module. Time cost: 0s
+2026-01-17 01:08:26,489 [INFO]    Predicting v1 chr11_30000000_40000000, 0 events pass lite-Unet module. Time cost: 0s
+2026-01-17 01:08:26,492 [INFO]    Predicting v1 chr11_40000000_50000000, 0 events pass lite-Unet module. Time cost: 0s
+2026-01-17 01:08:26,496 [INFO]    Predicting v1 chr11_50000000_60000000, 0 events pass lite-Unet module. Time cost: 0s
+2026-01-17 01:08:26,499 [INFO]    Predicting v1 chr7_130000000_140000000, 4 events pass lite-Unet module. Time cost: 1s
+2026-01-17 01:08:26,652 [INFO]    Predicting v1 chr2_90000000_100000000, 11 events pass lite-Unet module. Time cost: 4s
+2026-01-17 01:08:26,664 [INFO]    Predicting v1 chr11_80000000_90000000, 0 events pass lite-Unet module. Time cost: 0s
+2026-01-17 01:08:26,803 [INFO]    Predicting v1 chr7_100000000_110000000, 6 events pass lite-Unet module. Time cost: 2s
+2026-01-17 01:08:26,812 [INFO]    Predicting v1 chr11_100000000_110000000, 0 events pass lite-Unet module. Time cost: 0s
+2026-01-17 01:08:26,822 [INFO]    Predicting v1 chr11_110000000_120000000, 0 events pass lite-Unet module. Time cost: 0s
+2026-01-17 01:08:26,832 [INFO]    Predicting v1 chr10_80000000_90000000, 2 events pass lite-Unet module. Time cost: 0s
+2026-01-17 01:08:26,832 [INFO]    Predicting v1 chr11_120000000_130000000, 0 events pass lite-Unet module. Time cost: 0s
+2026-01-17 01:08:26,949 [INFO]    Predicting v1 chr10_40000000_50000000, 3 events pass lite-Unet module. Time cost: 0s
+2026-01-17 01:08:26,956 [INFO]    Predicting v1 chr12_10000000_20000000, 0 events pass lite-Unet module. Time cost: 0s
+2026-01-17 01:08:26,961 [INFO]    Predicting v1 chr12_20000000_30000000, 0 events pass lite-Unet module. Time cost: 0s
+2026-01-17 01:08:26,967 [INFO]    Predicting v1 chr12_30000000_40000000, 0 events pass lite-Unet module. Time cost: 0s
+2026-01-17 01:08:26,972 [INFO]    Predicting v1 chr12_40000000_50000000, 0 events pass lite-Unet module. Time cost: 0s
+2026-01-17 01:08:26,983 [INFO]    Predicting v1 chr2_120000000_130000000, 8 events pass lite-Unet module. Time cost: 4s
+2026-01-17 01:08:26,990 [INFO]    Predicting v1 chr12_60000000_70000000, 0 events pass lite-Unet module. Time cost: 0s
+2026-01-17 01:08:27,011 [INFO]    Predicting v1 chr12_70000000_80000000, 0 events pass lite-Unet module. Time cost: 0s
+2026-01-17 01:08:27,016 [INFO]    Predicting v1 chr12_80000000_90000000, 0 events pass lite-Unet module. Time cost: 0s
+2026-01-17 01:08:27,020 [INFO]    Predicting v1 chr4_0_10000000, 9 events pass lite-Unet module. Time cost: 4s
+2026-01-17 01:08:27,022 [INFO]    Predicting v1 chr12_90000000_100000000, 0 events pass lite-Unet module. Time cost: 0s
+2026-01-17 01:08:27,026 [INFO]    Predicting v1 chr12_100000000_110000000, 1 events pass lite-Unet module. Time cost: 0s
+2026-01-17 01:08:27,059 [INFO]    Predicting v1 chr10_110000000_120000000, 2 events pass lite-Unet module. Time cost: 0s
+2026-01-17 01:08:27,131 [INFO]    Predicting v1 chr11_90000000_100000000, 1 events pass lite-Unet module. Time cost: 0s
+2026-01-17 01:08:27,142 [INFO]    Predicting v1 chr13_0_10000000, 0 events pass lite-Unet module. Time cost: 0s
+2026-01-17 01:08:27,310 [INFO]    Predicting v1 chr3_190000000_200000000, 8 events pass lite-Unet module. Time cost: 4s
+2026-01-17 01:08:27,384 [INFO]    Predicting v1 chr12_50000000_60000000, 1 events pass lite-Unet module. Time cost: 0s
+2026-01-17 01:08:27,384 [INFO]    Predicting v1 chr2_110000000_120000000, 9 events pass lite-Unet module. Time cost: 4s
+2026-01-17 01:08:27,394 [INFO]    Predicting v1 chr13_40000000_50000000, 0 events pass lite-Unet module. Time cost: 0s
+2026-01-17 01:08:27,394 [INFO]    Predicting v1 chr13_30000000_40000000, 0 events pass lite-Unet module. Time cost: 0s
+2026-01-17 01:08:27,402 [INFO]    Predicting v1 chr13_60000000_70000000, 0 events pass lite-Unet module. Time cost: 0s
+2026-01-17 01:08:27,402 [INFO]    Predicting v1 chr13_50000000_60000000, 0 events pass lite-Unet module. Time cost: 0s
+2026-01-17 01:08:27,409 [INFO]    Predicting v1 chr13_70000000_80000000, 0 events pass lite-Unet module. Time cost: 0s
+2026-01-17 01:08:27,412 [INFO]    Predicting v1 chr13_80000000_90000000, 0 events pass lite-Unet module. Time cost: 0s
+2026-01-17 01:08:27,420 [INFO]    Predicting v1 chr13_100000000_110000000, 0 events pass lite-Unet module. Time cost: 0s
+2026-01-17 01:08:27,428 [INFO]    Predicting v1 chr13_110000000_120000000, 0 events pass lite-Unet module. Time cost: 0s
+2026-01-17 01:08:27,440 [INFO]    Predicting v1 chr14_0_10000000, 0 events pass lite-Unet module. Time cost: 0s
+2026-01-17 01:08:27,518 [INFO]    Predicting v1 chr12_0_10000000, 6 events pass lite-Unet module. Time cost: 0s
+2026-01-17 01:08:27,525 [INFO]    Predicting v1 chr14_20000000_30000000, 0 events pass lite-Unet module. Time cost: 0s
+2026-01-17 01:08:27,531 [INFO]    Predicting v1 chr14_30000000_40000000, 0 events pass lite-Unet module. Time cost: 0s
+2026-01-17 01:08:27,537 [INFO]    Predicting v1 chr14_40000000_50000000, 0 events pass lite-Unet module. Time cost: 0s
+2026-01-17 01:08:27,544 [INFO]    Predicting v1 chr14_50000000_60000000, 0 events pass lite-Unet module. Time cost: 0s
+2026-01-17 01:08:27,551 [INFO]    Predicting v1 chr14_60000000_70000000, 0 events pass lite-Unet module. Time cost: 0s
+2026-01-17 01:08:27,558 [INFO]    Predicting v1 chr14_70000000_80000000, 0 events pass lite-Unet module. Time cost: 0s
+2026-01-17 01:08:27,566 [INFO]    Predicting v1 chr14_80000000_90000000, 0 events pass lite-Unet module. Time cost: 0s
+2026-01-17 01:08:27,723 [INFO]    Predicting v1 chr11_130000000_140000000, 2 events pass lite-Unet module. Time cost: 0s
+2026-01-17 01:08:27,830 [INFO]    Predicting v1 chr13_90000000_100000000, 1 events pass lite-Unet module. Time cost: 0s
+2026-01-17 01:08:27,834 [INFO]    Predicting v1 chr15_0_10000000, 0 events pass lite-Unet module. Time cost: 0s
+2026-01-17 01:08:27,838 [INFO]    Predicting v1 chr15_10000000_20000000, 1 events pass lite-Unet module. Time cost: 0s
+2026-01-17 01:08:27,892 [INFO]    Predicting v1 chr12_110000000_120000000, 2 events pass lite-Unet module. Time cost: 0s
+2026-01-17 01:08:28,072 [INFO]    Predicting v1 chr1_110000000_120000000, 24 events pass lite-Unet module. Time cost: 5s
+2026-01-17 01:08:28,079 [INFO]    Predicting v1 chr15_40000000_50000000, 0 events pass lite-Unet module. Time cost: 0s
+2026-01-17 01:08:28,084 [INFO]    Predicting v1 chr15_50000000_60000000, 0 events pass lite-Unet module. Time cost: 0s
+2026-01-17 01:08:28,172 [INFO]    Predicting v1 chr1_150000000_160000000, 7 events pass lite-Unet module. Time cost: 5s
+2026-01-17 01:08:28,200 [INFO]    Predicting v1 chr14_10000000_20000000, 1 events pass lite-Unet module. Time cost: 0s
+2026-01-17 01:08:28,206 [INFO]    Predicting v1 chr13_20000000_30000000, 3 events pass lite-Unet module. Time cost: 0s
+2026-01-17 01:08:28,208 [INFO]    Predicting v1 chr15_80000000_90000000, 0 events pass lite-Unet module. Time cost: 0s
+2026-01-17 01:08:28,212 [INFO]    Predicting v1 chr15_90000000_100000000, 0 events pass lite-Unet module. Time cost: 0s
+2026-01-17 01:08:28,221 [INFO]    Predicting v1 chr16_10000000_20000000, 0 events pass lite-Unet module. Time cost: 0s
+2026-01-17 01:08:28,294 [INFO]    Predicting v1 chr15_30000000_40000000, 1 events pass lite-Unet module. Time cost: 0s
+2026-01-17 01:08:28,299 [INFO]    Predicting v1 chr16_30000000_40000000, 0 events pass lite-Unet module. Time cost: 0s
+2026-01-17 01:08:28,304 [INFO]    Predicting v1 chr16_40000000_50000000, 0 events pass lite-Unet module. Time cost: 0s
+2026-01-17 01:08:28,310 [INFO]    Predicting v1 chr16_50000000_60000000, 0 events pass lite-Unet module. Time cost: 0s
+2026-01-17 01:08:28,315 [INFO]    Predicting v1 chr16_60000000_70000000, 0 events pass lite-Unet module. Time cost: 0s
+2026-01-17 01:08:28,382 [INFO]    Predicting v1 chr2_240000000_250000000, 10 events pass lite-Unet module. Time cost: 5s
+2026-01-17 01:08:28,527 [INFO]    Predicting v1 chr8_140000000_150000000, 20 events pass lite-Unet module. Time cost: 3s
+2026-01-17 01:08:28,686 [INFO]    Predicting v1 chr15_20000000_30000000, 2 events pass lite-Unet module. Time cost: 0s
+2026-01-17 01:08:28,686 [INFO]    Predicting v1 chr12_130000000_140000000, 3 events pass lite-Unet module. Time cost: 1s
+2026-01-17 01:08:28,694 [INFO]    Predicting v1 chr17_0_10000000, 1 events pass lite-Unet module. Time cost: 0s
+2026-01-17 01:08:28,698 [INFO]    Predicting v1 chr17_10000000_20000000, 1 events pass lite-Unet module. Time cost: 0s
+2026-01-17 01:08:28,701 [INFO]    Predicting v1 chr17_20000000_30000000, 0 events pass lite-Unet module. Time cost: 0s
+2026-01-17 01:08:28,701 [INFO]    Predicting v1 chr16_70000000_80000000, 1 events pass lite-Unet module. Time cost: 0s
+2026-01-17 01:08:28,706 [INFO]    Predicting v1 chr17_40000000_50000000, 0 events pass lite-Unet module. Time cost: 0s
+2026-01-17 01:08:28,710 [INFO]    Predicting v1 chr17_30000000_40000000, 0 events pass lite-Unet module. Time cost: 0s
+2026-01-17 01:08:28,834 [INFO]    Predicting v1 chr10_120000000_130000000, 7 events pass lite-Unet module. Time cost: 2s
+2026-01-17 01:08:28,896 [INFO]    Predicting v1 chr4_180000000_190000000, 17 events pass lite-Unet module. Time cost: 5s
+2026-01-17 01:08:29,002 [INFO]    Predicting v1 chr15_70000000_80000000, 1 events pass lite-Unet module. Time cost: 0s
+2026-01-17 01:08:29,005 [INFO]    Predicting v1 chr16_80000000_90000000, 1 events pass lite-Unet module. Time cost: 0s
+2026-01-17 01:08:29,011 [INFO]    Predicting v1 chr18_20000000_30000000, 0 events pass lite-Unet module. Time cost: 0s
+2026-01-17 01:08:29,015 [INFO]    Predicting v1 chr18_10000000_20000000, 0 events pass lite-Unet module. Time cost: 0s
+2026-01-17 01:08:29,017 [INFO]    Predicting v1 chr18_30000000_40000000, 0 events pass lite-Unet module. Time cost: 0s
+2026-01-17 01:08:29,030 [INFO]    Predicting v1 chr18_40000000_50000000, 0 events pass lite-Unet module. Time cost: 0s
+2026-01-17 01:08:29,043 [INFO]    Predicting v1 chr18_60000000_70000000, 0 events pass lite-Unet module. Time cost: 0s
+2026-01-17 01:08:29,052 [INFO]    Predicting v1 chr1_0_10000000, 13 events pass lite-Unet module. Time cost: 6s
+2026-01-17 01:08:29,067 [INFO]    Predicting v1 chr18_80000000_90000000, 0 events pass lite-Unet module. Time cost: 0s
+2026-01-17 01:08:29,095 [INFO]    Predicting v1 chr17_60000000_70000000, 1 events pass lite-Unet module. Time cost: 0s
+2026-01-17 01:08:29,106 [INFO]    Predicting v1 chr17_50000000_60000000, 1 events pass lite-Unet module. Time cost: 0s
+2026-01-17 01:08:29,151 [INFO]    Predicting v1 chr16_20000000_30000000, 1 events pass lite-Unet module. Time cost: 0s
+2026-01-17 01:08:29,369 [INFO]    Predicting v1 chr14_100000000_110000000, 5 events pass lite-Unet module. Time cost: 1s
+2026-01-17 01:08:29,602 [INFO]    Predicting v1 chr18_0_10000000, 2 events pass lite-Unet module. Time cost: 0s
+2026-01-17 01:08:29,609 [INFO]    Predicting v1 chr19_50000000_60000000, 0 events pass lite-Unet module. Time cost: 0s
+2026-01-17 01:08:29,630 [INFO]    Predicting v1 chr18_50000000_60000000, 1 events pass lite-Unet module. Time cost: 0s
+2026-01-17 01:08:29,752 [INFO]    Predicting v1 chr17_70000000_80000000, 3 events pass lite-Unet module. Time cost: 1s
+2026-01-17 01:08:29,766 [INFO]    Predicting v1 chr20_10000000_20000000, 0 events pass lite-Unet module. Time cost: 0s
+2026-01-17 01:08:29,778 [INFO]    Predicting v1 chr20_20000000_30000000, 0 events pass lite-Unet module. Time cost: 0s
+2026-01-17 01:08:29,948 [INFO]    Predicting v1 chr13_10000000_20000000, 6 events pass lite-Unet module. Time cost: 2s
+2026-01-17 01:08:29,959 [INFO]    Predicting v1 chr20_40000000_50000000, 0 events pass lite-Unet module. Time cost: 0s
+2026-01-17 01:08:30,228 [INFO]    Predicting v1 chr2_0_10000000, 16 events pass lite-Unet module. Time cost: 7s
+2026-01-17 01:08:30,366 [INFO]    Predicting v1 chr20_30000000_40000000, 5 events pass lite-Unet module. Time cost: 0s
+2026-01-17 01:08:30,366 [INFO]    Predicting v1 chr19_60000000_70000000, 2 events pass lite-Unet module. Time cost: 0s
+2026-01-17 01:08:30,374 [INFO]    Predicting v1 chr21_10000000_20000000, 0 events pass lite-Unet module. Time cost: 0s
+2026-01-17 01:08:30,374 [INFO]    Predicting v1 chr21_0_10000000, 0 events pass lite-Unet module. Time cost: 0s
+2026-01-17 01:08:30,380 [INFO]    Predicting v1 chr21_20000000_30000000, 0 events pass lite-Unet module. Time cost: 0s
+2026-01-17 01:08:30,517 [INFO]    Predicting v1 chr19_0_10000000, 9 events pass lite-Unet module. Time cost: 1s
+2026-01-17 01:08:30,524 [INFO]    Predicting v1 chr22_0_10000000, 0 events pass lite-Unet module. Time cost: 0s
+2026-01-17 01:08:30,536 [INFO]    Predicting v1 chr19_30000000_40000000, 2 events pass lite-Unet module. Time cost: 1s
+2026-01-17 01:08:30,562 [INFO]    Predicting v1 chr14_90000000_100000000, 9 events pass lite-Unet module. Time cost: 2s
+2026-01-17 01:08:30,598 [INFO]    Predicting v1 chr10_0_10000000, 6 events pass lite-Unet module. Time cost: 4s
+2026-01-17 01:08:30,648 [INFO]    Predicting v1 chr11_0_10000000, 11 events pass lite-Unet module. Time cost: 4s
+2026-01-17 01:08:30,888 [INFO]    Predicting v1 chr21_30000000_40000000, 1 events pass lite-Unet module. Time cost: 0s
+2026-01-17 01:08:30,910 [INFO]    Predicting v1 chr19_20000000_30000000, 11 events pass lite-Unet module. Time cost: 1s
+2026-01-17 01:08:30,917 [INFO]    Predicting v1 chrX_10000000_20000000, 0 events pass lite-Unet module. Time cost: 0s
+2026-01-17 01:08:30,924 [INFO]    Predicting v1 chrX_20000000_30000000, 0 events pass lite-Unet module. Time cost: 0s
+2026-01-17 01:08:30,927 [INFO]    Predicting v1 chr22_10000000_20000000, 1 events pass lite-Unet module. Time cost: 0s
+2026-01-17 01:08:31,202 [INFO]    Predicting v1 chr15_60000000_70000000, 12 events pass lite-Unet module. Time cost: 3s
+2026-01-17 01:08:31,206 [INFO]    Predicting v1 chrX_50000000_60000000, 0 events pass lite-Unet module. Time cost: 0s
+2026-01-17 01:08:31,209 [INFO]    Predicting v1 chrX_60000000_70000000, 0 events pass lite-Unet module. Time cost: 0s
+2026-01-17 01:08:31,212 [INFO]    Predicting v1 chrX_70000000_80000000, 0 events pass lite-Unet module. Time cost: 0s
+2026-01-17 01:08:31,230 [INFO]    Predicting v1 chr19_40000000_50000000, 4 events pass lite-Unet module. Time cost: 1s
+2026-01-17 01:08:31,238 [INFO]    Predicting v1 chrX_90000000_100000000, 0 events pass lite-Unet module. Time cost: 0s
+2026-01-17 01:08:31,246 [INFO]    Predicting v1 chrX_100000000_110000000, 0 events pass lite-Unet module. Time cost: 0s
+2026-01-17 01:08:31,251 [INFO]    Predicting v1 chrX_110000000_120000000, 0 events pass lite-Unet module. Time cost: 0s
+2026-01-17 01:08:31,256 [INFO]    Predicting v1 chrX_120000000_130000000, 0 events pass lite-Unet module. Time cost: 0s
+2026-01-17 01:08:31,262 [INFO]    Predicting v1 chrX_130000000_140000000, 0 events pass lite-Unet module. Time cost: 0s
+2026-01-17 01:08:31,275 [INFO]    Predicting v1 chr11_70000000_80000000, 12 events pass lite-Unet module. Time cost: 4s
+2026-01-17 01:08:31,353 [INFO]    Predicting v1 chrX_40000000_50000000, 1 events pass lite-Unet module. Time cost: 0s
+2026-01-17 01:08:31,361 [INFO]    Predicting v1 chrY_0_10000000, 0 events pass lite-Unet module. Time cost: 0s
+2026-01-17 01:08:31,371 [INFO]    Predicting v1 chrY_10000000_20000000, 0 events pass lite-Unet module. Time cost: 0s
+2026-01-17 01:08:31,380 [INFO]    Predicting v1 chrY_20000000_30000000, 0 events pass lite-Unet module. Time cost: 0s
+2026-01-17 01:08:31,390 [INFO]    Predicting v1 chrY_30000000_40000000, 0 events pass lite-Unet module. Time cost: 0s
+2026-01-17 01:08:31,399 [INFO]    Predicting v1 chrY_40000000_50000000, 0 events pass lite-Unet module. Time cost: 0s
+2026-01-17 01:08:31,408 [INFO]    Predicting v1 chrY_50000000_60000000, 0 events pass lite-Unet module. Time cost: 0s
+2026-01-17 01:08:31,418 [INFO]    Predicting v1 chrY_60000000_70000000, 0 events pass lite-Unet module. Time cost: 0s
+2026-01-17 01:08:31,428 [INFO]    Predicting v1 chrM_0_10000000, 0 events pass lite-Unet module. Time cost: 0s
+2026-01-17 01:08:31,639 [INFO]    Predicting v1 chrX_150000000_160000000, 1 events pass lite-Unet module. Time cost: 0s
+2026-01-17 01:08:31,732 [INFO]    Predicting v1 chr12_120000000_130000000, 25 events pass lite-Unet module. Time cost: 4s
+2026-01-17 01:08:31,758 [INFO]    Predicting v1 chrX_140000000_150000000, 1 events pass lite-Unet module. Time cost: 0s
+2026-01-17 01:08:31,762 [INFO]    Predicting v1 chrX_30000000_40000000, 2 events pass lite-Unet module. Time cost: 0s
+2026-01-17 01:08:31,770 [INFO]    Predicting v1 chrX_80000000_90000000, 1 events pass lite-Unet module. Time cost: 0s
+2026-01-17 01:08:32,361 [INFO]    Predicting v1 chr16_90000000_100000000, 9 events pass lite-Unet module. Time cost: 3s
+2026-01-17 01:08:32,413 [INFO]    Predicting v1 chr22_50000000_60000000, 5 events pass lite-Unet module. Time cost: 1s
+2026-01-17 01:08:32,418 [INFO]    Predicting v1 chr11_10000000_20000000, 8 events pass lite-Unet module. Time cost: 5s
+2026-01-17 01:08:32,427 [INFO]    Predicting v1 chr19_10000000_20000000, 15 events pass lite-Unet module. Time cost: 3s
+2026-01-17 01:08:32,431 [INFO]    Predicting v1 chr20_0_10000000, 7 events pass lite-Unet module. Time cost: 2s
+2026-01-17 01:08:32,480 [INFO]    Predicting v1 chr20_50000000_60000000, 12 events pass lite-Unet module. Time cost: 2s
+2026-01-17 01:08:32,489 [INFO]    Predicting v1 chr11_60000000_70000000, 17 events pass lite-Unet module. Time cost: 5s
+2026-01-17 01:08:32,498 [INFO]    Predicting v1 chr22_40000000_50000000, 11 events pass lite-Unet module. Time cost: 1s
+2026-01-17 01:08:32,500 [INFO]    Predicting v1 chr22_30000000_40000000, 7 events pass lite-Unet module. Time cost: 1s
+2026-01-17 01:08:32,679 [INFO]    Predicting v1 chr22_20000000_30000000, 4 events pass lite-Unet module. Time cost: 2s
+2026-01-17 01:08:32,835 [INFO]    Predicting v1 chr18_70000000_80000000, 5 events pass lite-Unet module. Time cost: 3s
+2026-01-17 01:08:32,906 [INFO]    Predicting v1 chr10_130000000_140000000, 24 events pass lite-Unet module. Time cost: 6s
+2026-01-17 01:08:33,178 [INFO]    Predicting v1 chr17_80000000_90000000, 15 events pass lite-Unet module. Time cost: 4s
+2026-01-17 01:08:33,611 [INFO]    Predicting v1 chr9_140000000_150000000, 42 events pass lite-Unet module. Time cost: 7s
+2026-01-17 01:08:33,993 [INFO]    Predicting v1 chrX_0_10000000, 15 events pass lite-Unet module. Time cost: 3s
+2026-01-17 01:08:34,475 [INFO]    Predicting v1 chr16_0_10000000, 12 events pass lite-Unet module. Time cost: 6s
+2026-01-17 01:08:34,633 [INFO]    Predicting v1 chr7_150000000_160000000, 19 events pass lite-Unet module. Time cost: 9s
+2026-01-17 01:08:34,662 [INFO]    Predicting v1 chr20_60000000_70000000, 11 events pass lite-Unet module. Time cost: 4s
+2026-01-17 01:08:34,968 [INFO]    Predicting v1 chr21_40000000_50000000, 22 events pass lite-Unet module. Time cost: 4s
+2026-01-17 01:08:35,032 [INFO]    Predicting v1 chr6_160000000_170000000, 34 events pass lite-Unet module. Time cost: 10s
+2026-01-17 01:08:35,158 [INFO]    Predicting Time Cost 12s
+2026-01-17 01:08:35,158 [INFO]    ****************** Step3 Outputting to VCF ****************************
+2026-01-17 01:08:35,459 [INFO]    Outputting v1 to /storage/scratch01/groups/bu/simSVs/tfe_unir/visor-simulations/results/v1_40x_30000_A_svision/v1.svision_pro_v2.5.s5.vcf. Time cost: 0s
+2026-01-17 01:08:36,507 [INFO]    ****************** Step4 Finish ***********************************
+2026-01-17 01:08:36,508 [INFO]    SVision-pro v2.5 successfully finished. Time Cost 523.158684s

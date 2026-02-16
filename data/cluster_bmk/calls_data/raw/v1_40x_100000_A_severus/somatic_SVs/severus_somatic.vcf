@@ -1,0 +1,96 @@
+##fileformat=VCFv4.2
+##source=Severus_v1.6
+##CommandLine= --target-bam results/v1_40x_100000_A_LASeR/tumour.bam --control-bam results/normal_40x_100000_LASeR/sim.srt.bam --out-dir results/v1_40x_100000_A_severus --vntr-bed /storage/scratch01/groups/bu/simSVs/tfe_unir/visor-simulations/resources/severus_vntrs/human_chm13v2.0_maskedY_rCRS.trf.bed -t 24
+##fileDate=2026-01-17
+##contig=<ID=chr1,length=248387328>
+##contig=<ID=chr2,length=242696752>
+##contig=<ID=chr3,length=201105948>
+##contig=<ID=chr4,length=193574945>
+##contig=<ID=chr5,length=182045439>
+##contig=<ID=chr6,length=172126628>
+##contig=<ID=chr7,length=160567428>
+##contig=<ID=chr8,length=146259331>
+##contig=<ID=chr9,length=150617247>
+##contig=<ID=chr10,length=134758134>
+##contig=<ID=chr11,length=135127769>
+##contig=<ID=chr12,length=133324548>
+##contig=<ID=chr13,length=113566686>
+##contig=<ID=chr14,length=101161492>
+##contig=<ID=chr15,length=99753195>
+##contig=<ID=chr16,length=96330374>
+##contig=<ID=chr17,length=84276897>
+##contig=<ID=chr18,length=80542538>
+##contig=<ID=chr19,length=61707364>
+##contig=<ID=chr20,length=66210255>
+##contig=<ID=chr21,length=45090682>
+##contig=<ID=chr22,length=51324926>
+##contig=<ID=chrX,length=154259566>
+##contig=<ID=chrY,length=62460029>
+##contig=<ID=chrM,length=16569>
+##ALT=<ID=DEL,Description="Deletion">
+##ALT=<ID=INS,Description="Insertion">
+##ALT=<ID=DUP,Description="Duplication">
+##ALT=<ID=INV,Description="Reciprocal Inversion">
+##ALT=<ID=BND,Description="Breakend">
+##FILTER=<ID=PASS,Description="All filters passed">
+##FILTER=<ID=FAIL_LOWSUPP,Description="Less number of support, but ok in other samples">
+##FILTER=<ID=FAIL_MAP_CONS,Description="Majority of variant reads have unreliable mappability">
+##FILTER=<ID=FAIL_CONN_CONS,Description="Majority of variant reads have unreliable connections">
+##FILTER=<ID=FAIL_LOWCOV_OTHER,Description="Low variant coverage in other samples">
+##INFO=<ID=PRECISE,Number=0,Type=Flag,Description="SV with precise breakpoints coordinates and length">
+##INFO=<ID=IMPRECISE,Number=0,Type=Flag,Description="SV with imprecise breakpoints coordinates and length">
+##INFO=<ID=SVTYPE,Number=1,Type=String,Description="Type of structural variant">
+##INFO=<ID=SVLEN,Number=1,Type=Integer,Description="Length of the SV">
+##INFO=<ID=END,Number=1,Type=Integer,Description="End position of the SV">
+##INFO=<ID=STRANDS,Number=1,Type=String,Description="Breakpoint strandedness">
+##INFO=<ID=DETAILED_TYPE,Number=1,Type=String,Description="Detailed type of the SV">
+##INFO=<ID=INSLEN,Number=1,Type=Integer,Description="Length of the unmapped sequence between breakpoint">
+##INFO=<ID=MAPQ,Number=1,Type=Integer,Description="Median mapping quality of supporting reads">
+##INFO=<ID=PHASESETID,Number=1,Type=String,Description="Matching phaseset ID for phased SVs">
+##INFO=<ID=HP,Number=1,Type=Integer,Description="Matching haplotype ID for phased SVs">
+##INFO=<ID=CLUSTERID,Number=1,Type=String,Description="Cluster ID in breakpoint_graph">
+##INFO=<ID=INSSEQ,Number=1,Type=String,Description="Insertion sequence between breakpoints">
+##INFO=<ID=MATE_ID,Number=1,Type=String,Description="MATE ID for breakends">
+##INFO=<ID=INSIDE_VNTR,Number=1,Type=String,Description="True if an indel is inside a VNTR">
+##INFO=<ID=ALIGNED_POS,Number=1,Type=String,Description="Position in the reference">
+##INFO=<ID=LOW_COV_IN,Number=1,Type=String,Description="Samples that has low coverage in that region">
+##INFO=<ID=INSIDE_WHITELIST,Number=1,Type=String,Description="SVs within the whitelist bed file">
+##FORMAT=<ID=GT,Number=1,Type=String,Description="Genotype">
+##FORMAT=<ID=DR,Number=1,Type=Integer,Description="Number of reference reads">
+##FORMAT=<ID=DV,Number=1,Type=Integer,Description="Number of variant reads">
+##FORMAT=<ID=VAF,Number=1,Type=Float,Description="Variant allele frequency">
+##FORMAT=<ID=hVAF,Number=3,Type=Float,Description="Haplotype specific variant Allele frequency (H0,H1,H2)">
+#CHROM	POS	ID	REF	ALT	QUAL	FILTER	INFO	FORMAT	tumour
+chr1	142241660	severus_DUP9	N	<DUP>	60.0	PASS	IMPRECISE;SVTYPE=DUP;SVLEN=11997703;END=154239362;STRANDS=-+;DETAILED_TYPE=tandem_duplication;MAPQ=60.0	GT:VAF:hVAF:DR:DV	0/1:0.43:0.43,0.00,0.00:64:48
+chr5	20360850	severus_INS116	N	GAGGTTTGGGATCAGCTGCTGTGGTATACTACTCGCGAAGAAGATGCGTGAGCGA	60.0	PASS	PRECISE;SVTYPE=INS;SVLEN=52;MAPQ=60.0	GT:VAF:hVAF:DR:DV	0/1:0.07:0.07,0.00,0.00:40:3
+chr6	148499998	severus_BND81_1	N	[chr6:152100000[N	60.0	PASS	PRECISE;SVTYPE=BND;SVLEN=3600002;MATE_ID=severus_BND81_2;STRANDS=--;MAPQ=60.0	GT:VAF:hVAF:DR:DV	0/1:0.26:0.26,0.00,0.00:34:12
+chr6	148499999	severus_BND82_1	N	N]chr6:152100001]	60.0	PASS	PRECISE;SVTYPE=BND;SVLEN=3600002;MATE_ID=severus_BND82_2;STRANDS=++;MAPQ=60.0	GT:VAF:hVAF:DR:DV	0/1:0.42:0.42,0.00,0.00:30:22
+chr6	152100000	severus_BND81_2	N	[chr6:148499998[N	60.0	PASS	PRECISE;SVTYPE=BND;SVLEN=3600002;MATE_ID=severus_BND81_1;STRANDS=--;MAPQ=60.0	GT:VAF:hVAF:DR:DV	0/1:0.26:0.26,0.00,0.00:34:12
+chr6	152100001	severus_BND82_2	N	N]chr6:148499999]	60.0	PASS	PRECISE;SVTYPE=BND;SVLEN=3600002;MATE_ID=severus_BND82_1;STRANDS=++;MAPQ=60.0	GT:VAF:hVAF:DR:DV	0/1:0.42:0.42,0.00,0.00:30:22
+chr6	163488585	severus_INS117	N	AGGCGGAGTGGGGGCCTGTCCAGCAGGGTCGGTGAGGCATGTAGACGGTAGTGTACTACGTACTTT	60.0	PASS	IMPRECISE;SVTYPE=INS;SVLEN=57;MAPQ=60.0	GT:VAF:hVAF:DR:DV	0/1:0.07:0.07,0.00,0.00:40:3
+chr7	4278825	severus_DEL84	N	<DEL>	60.0	PASS	PRECISE;SVTYPE=DEL;SVLEN=836;END=4279661;STRANDS=+-;MAPQ=60.0	GT:VAF:hVAF:DR:DV	0/1:0.08:0.08,0.00,0.00:36:3
+chr7	4292850	severus_DEL85	N	<DEL>	60.0	PASS	PRECISE;SVTYPE=DEL;SVLEN=827;END=4293677;STRANDS=+-;MAPQ=60.0	GT:VAF:hVAF:DR:DV	0/1:0.07:0.07,0.00,0.00:37:3
+chr7	4297374	severus_DEL86	N	<DEL>	60.0	PASS	PRECISE;SVTYPE=DEL;SVLEN=849;END=4298223;STRANDS=+-;MAPQ=60.0	GT:VAF:hVAF:DR:DV	0/1:0.08:0.08,0.00,0.00:36:3
+chr7	159238941	severus_DEL90	N	<DEL>	60.0	PASS	PRECISE;SVTYPE=DEL;SVLEN=1831;END=159240772;STRANDS=+-;INSIDE_VNTR=TRUE;MAPQ=60.0	GT:VAF:hVAF:DR:DV	0/1:0.08:0.08,0.00,0.00:34:3
+chr8	142524934	severus_DEL95	N	<DEL>	60.0	PASS	PRECISE;SVTYPE=DEL;SVLEN=832;END=142525766;STRANDS=+-;MAPQ=60.0	GT:VAF:hVAF:DR:DV	0/1:0.07:0.07,0.00,0.00:37:3
+chr8	143662562	severus_DEL98	N	<DEL>	60.0	PASS	PRECISE;SVTYPE=DEL;SVLEN=1450;END=143664012;STRANDS=+-;INSIDE_VNTR=TRUE;MAPQ=60.0	GT:VAF:hVAF:DR:DV	0/1:0.09:0.09,0.00,0.00:32:3
+chr9	21949999	severus_DEL104	N	<DEL>	60.0	PASS	PRECISE;SVTYPE=DEL;SVLEN=50000;END=21999999;STRANDS=+-;MAPQ=60.0	GT:VAF:hVAF:DR:DV	0/1:0.44:0.44,0.00,0.00:19:15
+chr9	145795184	severus_DEL105	N	<DEL>	60.0	PASS	PRECISE;SVTYPE=DEL;SVLEN=965;END=145796149;STRANDS=+-;MAPQ=60.0	GT:VAF:hVAF:DR:DV	0/1:0.06:0.06,0.00,0.00:47:3
+chr10	42048847	severus_DEL10	N	<DEL>	60.0	PASS	IMPRECISE;SVTYPE=DEL;SVLEN=53;END=42048900;STRANDS=+-;INSIDE_VNTR=TRUE;MAPQ=60.0	GT:VAF:hVAF:DR:DV	0/1:0.06:0.06,0.00,0.00:46:3
+chr11	1540122	severus_DEL18	N	<DEL>	60.0	PASS	PRECISE;SVTYPE=DEL;SVLEN=922;END=1541044;STRANDS=+-;MAPQ=60.0	GT:VAF:hVAF:DR:DV	0/1:0.10:0.10,0.00,0.00:28:3
+chr11	69658030	severus_BND23_1	N	N[chr14:99749998[	60.0	PASS	PRECISE;SVTYPE=BND;MATE_ID=severus_BND23_2;STRANDS=-+;DETAILED_TYPE=Templated_ins;MAPQ=60.0;CLUSTERID=severus_0	GT:VAF:hVAF:DR:DV	0/1:0.40:0.40,0.00,0.00:39:26
+chr11	70158032	severus_BND24_1	N	]chr14:100250001]N	60.0	PASS	IMPRECISE;SVTYPE=BND;MATE_ID=severus_BND24_2;STRANDS=+-;DETAILED_TYPE=Templated_ins;MAPQ=60.0;CLUSTERID=severus_0	GT:VAF:hVAF:DR:DV	0/1:0.38:0.38,0.00,0.00:33:20
+chr11	98682925	severus_INS114	N	GACGTCCGGGATCTGGTGCGTCGTATGTTAACGCATCTGGCGGGCACGCGGGGGGACGA	60.0	PASS	IMPRECISE;SVTYPE=INS;SVLEN=52;MAPQ=60.0	GT:VAF:hVAF:DR:DV	0/1:0.09:0.09,0.00,0.00:32:3
+chr14	99457010	severus_DEL30	N	<DEL>	60.0	PASS	PRECISE;SVTYPE=DEL;SVLEN=1048;END=99458057;STRANDS=+-;INSIDE_VNTR=TRUE;MAPQ=60.0	GT:VAF:hVAF:DR:DV	0/1:0.12:0.12,0.00,0.00:35:5
+chr14	99749998	severus_BND23_2	N	]chr11:69658030]N	60.0	PASS	PRECISE;SVTYPE=BND;MATE_ID=severus_BND23_1;STRANDS=-+;DETAILED_TYPE=Templated_ins;MAPQ=60.0;CLUSTERID=severus_0	GT:VAF:hVAF:DR:DV	0/1:0.40:0.40,0.00,0.00:39:26
+chr14	100250001	severus_BND24_2	N	N[chr11:70158032[	60.0	PASS	IMPRECISE;SVTYPE=BND;MATE_ID=severus_BND24_1;STRANDS=+-;DETAILED_TYPE=Templated_ins;MAPQ=60.0;CLUSTERID=severus_0	GT:VAF:hVAF:DR:DV	0/1:0.38:0.38,0.00,0.00:33:20
+chr16	94077437	severus_DEL35	N	<DEL>	60.0	PASS	PRECISE;SVTYPE=DEL;SVLEN=684;END=94078121;STRANDS=+-;MAPQ=60.0	GT:VAF:hVAF:DR:DV	0/1:0.08:0.08,0.00,0.00:34:3
+chr17	6400013	severus_BND36_1	N	]chr17:10707908]N	60.0	PASS	PRECISE;SVTYPE=BND;SVLEN=4307895;MATE_ID=severus_BND36_2;STRANDS=+-;MAPQ=60.0	GT:VAF:hVAF:DR:DV	0/1:0.94:0.94,0.00,0.00:1:16
+chr17	10707908	severus_BND36_2	N	N[chr17:6400013[	60.0	PASS	PRECISE;SVTYPE=BND;SVLEN=4307895;MATE_ID=severus_BND36_1;STRANDS=+-;MAPQ=60.0	GT:VAF:hVAF:DR:DV	0/1:0.94:0.94,0.00,0.00:1:16
+chr17	49401468	severus_DEL38	N	<DEL>	60.0	PASS	PRECISE;SVTYPE=DEL;SVLEN=965;END=49402433;STRANDS=+-;MAPQ=60.0	GT:VAF:hVAF:DR:DV	0/1:0.08:0.08,0.00,0.00:33:3
+chr18	80001656	severus_DEL45	N	<DEL>	60.0	PASS	PRECISE;SVTYPE=DEL;SVLEN=955;END=80002611;STRANDS=+-;MAPQ=60.0	GT:VAF:hVAF:DR:DV	0/1:0.07:0.07,0.00,0.00:41:3
+chr19	1232088	severus_DEL46	N	<DEL>	60.0	PASS	PRECISE;SVTYPE=DEL;SVLEN=787;END=1232875;STRANDS=+-;MAPQ=60.0	GT:VAF:hVAF:DR:DV	0/1:0.07:0.07,0.00,0.00:39:3
+chr21	43849833	severus_DEL59	N	<DEL>	60.0	PASS	PRECISE;SVTYPE=DEL;SVLEN=704;END=43850537;STRANDS=+-;INSIDE_VNTR=TRUE;MAPQ=60.0	GT:VAF:hVAF:DR:DV	0/1:0.07:0.07,0.00,0.00:37:3
+chr21	43871170	severus_DEL60	N	<DEL>	60.0	PASS	PRECISE;SVTYPE=DEL;SVLEN=843;END=43872013;STRANDS=+-;MAPQ=60.0	GT:VAF:hVAF:DR:DV	0/1:0.07:0.07,0.00,0.00:38:3
+chr21	43897533	severus_DEL61	N	<DEL>	60.0	PASS	PRECISE;SVTYPE=DEL;SVLEN=910;END=43898443;STRANDS=+-;INSIDE_VNTR=TRUE;MAPQ=60.0	GT:VAF:hVAF:DR:DV	0/1:0.07:0.07,0.00,0.00:38:3
+chr22	20604446	severus_DEL64	N	<DEL>	60.0	PASS	PRECISE;SVTYPE=DEL;SVLEN=1452;END=20605900;STRANDS=+-;INSIDE_VNTR=TRUE;MAPQ=60.0	GT:VAF:hVAF:DR:DV	0/1:0.10:0.10,0.00,0.00:36:4

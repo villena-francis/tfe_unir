@@ -1,0 +1,233 @@
+\chapter{Resultados}
+
+\section{Demandas computacionales de las simulaciones de lecturas largas}
+
+Las simulaciones realizadas con VISOR generaron un total de 4.54 TB de datos 
+sintéticos de secuenciación de lecturas largas mediante ONT. De este 
+volumen total, aproximadamente 2.54 TB correspondieron a lecturas alineadas al 
+genoma de referencia en formato BAM y sus respectivos ficheros índice, mientras 
+que el volumen restante consistió en lecturas no alineadas en formato FASTQ 
+(\textbf{Tabla~\ref{tab:file_sizes}}). Los datos de uso de CPUs, consumo de 
+memoria RAM y los tiempos de ejecución se muestran en la 
+\textbf{Figura~\ref{fig:hpc_visor_laser}}.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth]{data/cluster_bmk/hpc_visor_laser.pdf}
+    \caption[Demanda de recursos computacionales del módulo VISOR LASeR]{Demanda 
+    de recursos computacionales del módulo VISOR LASeR en función de la 
+    longitud de lecturas. Los gráficos muestran el consumo de núcleos de CPU 
+    (\textbf{a}), el uso de memoria RAM (\textbf{b}) y el tiempo de ejecución 
+    (\textbf{c}) para longitudes de lectura de 15, 30, 50 y 100 Kb. Se 
+    generaron tres réplicas técnicas WGS de tipo ``tumoral'' y una de tipo 
+    ``normal'' para cada longitud, todas con una profundidad de secuenciación 
+    de 40x. No se incluyen cálculos para el módulo VISOR HACk, ya que se 
+    ejecuta una única vez durante pocos minutos con bajo consumo de recursos 
+    para incorporar el conjunto de variantes estructurales en el genoma de 
+    referencia que posteriormente alimentará a VISOR LASeR. Los datos en bruto 
+    están disponibles en \url{https://github.com/villena-francis/tfe_unir/tree/main/data/cluster_bmk/hpc_data}.}
+    \label{fig:hpc_visor_laser}
+\end{figure}
+
+\section{Detección de variantes estructurales}
+
+\subsection{Exploración de los alineamientos de lecturas largas generados}
+
+De las SVs incluidas en las instrucciones para la generación de los datos 
+sintéticos (\textbf{Tabla~\ref{tab:stagesV1}}), se identificaron mediante 
+inspección visual con GW los breakpoints asociados a la duplicación en tándem 
+de 1q21 (\textbf{Figura~\ref{fig:chr1_del1q21}}), la inversión cromosómica de 6q25.1 
+(\textbf{Figura~\ref{fig:chr6_inv6q25.1}}), la translocación de 
+cortar-pegar de un fragmento de la región 9p21.3 (\textbf{Figura~\ref{fig:chr9_del9p21.3}}), 
+la translocación recíproca entre 11q13 y 14q32 (\textbf{Figura~\ref{fig:chr11-14_translocation}}), 
+y la deleción de 17p13 (\textbf{Figura~\ref{fig:chr17_del17p13}}). En relación a las 
+SVs de mayor tamaño (la ganancia de 1q, la deleción de 17p y la pérdida de una 
+copia del chr13), solo pudieron inferirse la pérdida del chr13 completo y la 
+deleción del 17p mediante la representación gráfica de los valores 
+de cobertura (\textbf{Figura~\ref{fig:chromosomes_comparison}}).
+
+\begin{figure}[H]
+    \centering
+    \begin{subfigure}[b]{\textwidth}
+        \centering
+        \caption{chr1}
+        \includegraphics[width=0.64\textwidth]{data/cluster_bmk/calls_data/chr1_40x_15000_A.png}
+        \label{fig:chr1_subfig}
+    \end{subfigure}
+    
+    \begin{subfigure}[b]{\textwidth}
+        \centering
+        \caption{chr13}
+        \includegraphics[width=0.64\textwidth]{data/cluster_bmk/calls_data/chr13_40x_15000_A.png}
+        \label{fig:chr13_subfig}
+    \end{subfigure}
+    
+    \begin{subfigure}[b]{\textwidth}
+        \centering
+        \caption{chr17}
+        \includegraphics[width=0.64\textwidth]{data/cluster_bmk/calls_data/chr17_40x_15000_A.png}
+        \label{fig:chr17_subfig}
+    \end{subfigure}
+    
+    \caption[Perfiles de profundidad de cobertura cromosómica]{Perfiles de 
+    profundidad de cobertura cromosómica. (\textbf{a}) chr1: se observa la 
+    amplificación de la región 1q21, mientras que el resto del cromosoma mantiene 
+    cobertura normal excepto en la región centromérica; (\textbf{b}) chr13: la cobertura 
+    reducida a aproximadamente la mitad (20x) refleja la pérdida de una copia 
+    del cromosoma completo. La región 13p12 muestra cobertura nula debido a 
+    duplicaciones segmentales (LCR13) que impiden el alineamiento único de las 
+    lecturas; (\textbf{c}) chr17: la cobertura reducida a la mitad en 17p evidencia la 
+    deleción de este brazo cromosómico. La región 17p12 muestra cobertura nula 
+    debido a duplicaciones segmentales (CMT1A-REPs) que impiden el alineamiento 
+    único de las lecturas. Los datos corresponden a la muestra tumoral A con 
+    longitud media de lectura de 15 kb. Los gráficos fueron generados 
+    utilizando la herramienta Wakhan.}
+    \label{fig:chromosomes_comparison}
+\end{figure}
+
+\subsection{Formato de los arcivos de salida}
+
+Los detectores de SVs generan archivos VCF similares a los producidos por los 
+detectores de SNVs. Sin embargo, en estos casos cada fila representa uno de los 
+puntos de ruptura (\textit{breakpoint}) que delimitan las SVs en cuestion. Las 
+variantes estructurales simples, como inserciones o deleciones, requieren la 
+identificación de dos puntos de ruptura, mientras que las variantes complejas, 
+como las translocaciones recíprocas, necesitan la detección de cuatro puntos de 
+ruptura. A modo ilustrativo, los archivos de salida finales generados por cada 
+detector, correspondientes a una de las muestras simuladas están disponibles en 
+\url{https://github.com/villena-francis/tfe_unir/tree/main/data/cluster_bmk/calls_data/raw}.
+
+En el caso de \textbf{SAVANA}, se observa una limitación significativa en su 
+archivo VCF de salida en comparación con otros detectores de variantes: su 
+incapacidad para clasificar los tipos de variantes estructurales. Esta 
+herramienta únicamente identifica y correlaciona puntos de ruptura sin 
+proporcionar información sobre el tipo específico de variante estructural 
+presente en cada caso.
+
+Por su parte, \textbf{Severus} va más allá de la detección convencional de 
+variantes estructurales al incorporar un procesamiento especializado para 
+repeticiones en tándem de número variable (VNTRs, del inglés \textit{Variable 
+Number Tandem Repeats}), lo que permite una anotación precisa de las variantes 
+estructurales dentro de estas regiones. La herramienta proporciona una salida 
+integral que incluye archivos VCF estándar, métricas detalladas de calidad en 
+archivos de registro (\textit{log}), y representaciones gráficas de los 
+reordenamientos cromosómicos mediante gráficos de visualización.
+
+En cuanto a \textbf{Sniffles2}, este detector genera exclusivamente archivos 
+VCF estándar, sin archivos de soporte adicionales ni visualizaciones 
+complementarias. No obstante, al igual que Severus, también incorpora 
+funcionalidades para mejorar la detección en regiones con VNTRs para optimizar 
+la precisión en la detección de variantes asociadas a estas regiones del genoma.
+
+Finalmente, \textbf{SVision-pro}, a pesar de utilizar un enfoque innovador 
+basado en codificación de imágenes para analizar características genómicas y 
+detectar variaciones inter-genómicas entre muestras pareadas tumor-normal, 
+limita su salida a archivos VCF estándar en los que las variantes no aparecen 
+ordenadas secuencialmente por cromosoma ni por sus coordenadas genómicas. Las 
+representaciones visuales empleadas en su pipeline de procesamiento interno no 
+son accesibles al usuario como ficheros de salida.  
+
+\subsection{Rendimiento}
+
+El análisis comparativo del rendimiento de los cuatro métodos de detección de 
+variantes estructurales reveló diferencias significativas en términos de precisión, 
+sensibilidad y tasa de falsos positivos. 
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth]{data/cluster_bmk/perform_calls.pdf}
+    \caption[Rendimiento de los métodos de detección de variantes estructurales 
+    evaluados]{Rendimiento de los métodos de detección de variantes estructurales 
+    SAVANA, Severus, Sniffles2 y SVision-pro, basado en las métricas de precisión, 
+    exhaustividad (\textit{recall}) y puntuación F1. Para cada profundidad de 
+    secuenciación, se obtuvieron tres resultados por métrica mediante la comparación 
+    de una muestra normal contra tres réplicas técnicas de la muestra tumoral. Los 
+    datos en bruto utilizados para todos los cálculos están disponibles en 
+    \url{https://github.com/villena-francis/master_thesis/tree/main/data/cluster_bmk/calls_data/callings.csv}.}
+    \label{fig:perform_calls}
+\end{figure}
+
+\textbf{SAVANA} demostró el mejor desempeño global con un F1-score promedio de 0.977 ± 0.041, 
+manteniendo una precisión del 95.8\% y una sensibilidad del 100\%, detectando 
+consistentemente las cinco SVs esperadas (duplicación de 1q21, inversión de 6q25.1, 
+translocación de 9p21.3, translocación recíproca 11q13-14q32 y deleción de 17p13) 
+en todas las réplicas y longitudes de lectura evaluadas, con un promedio de solo 
+0.25 falsos positivos por análisis. 
+
+\textbf{Severus}, aunque alcanzó una sensibilidad perfecta (100\%) detectando todas las 
+SVs esperadas, presentó una precisión notablemente inferior (21.8\% ± 5.8\%) 
+debido a una alta tasa de falsos positivos (promedio de 19.25 por análisis), 
+resultando en un F1-score de 0.355 ± 0.076. 
+
+\textbf{SVision-pro} detectó correctamente cuatro de las cinco SVs (inversión de 6q25.1, 
+translocaciones de 9p21.3 y 11q13-14q32, y deleción de 17p13), alcanzando una 
+sensibilidad del 80\%, pero su rendimiento estuvo severamente comprometido por 
+un número excepcionalmente elevado de falsos positivos (promedio de 546.2), lo 
+que redujo drásticamente su precisión a 0.7\% ± 0.1\% y su F1-score a 0.014 ± 0.001. 
+
+\textbf{Sniffles2} mostró el peor desempeño general, detectando únicamente la translocación 
+recíproca 11q13-14q32 en el 50\% de las réplicas, con una sensibilidad promedio 
+del 10\% ± 10.4\%, precisión del 2.1\% ± 2.4\%, y F1-score de 0.035 ± 0.038. 
+
+Estos resultados indican que SAVANA ofrece el mejor balance entre sensibilidad 
+y precisión para la detección de SVs en datos de secuenciación de lectura larga, 
+mientras que los otros métodos requieren optimización adicional de parámetros o 
+filtrado post-procesamiento para reducir los falsos positivos y mejorar su 
+aplicabilidad clínica.
+
+\newpage
+
+\subsection{Demandas computacionales}
+
+El análisis de demanda computacional reveló diferencias sustanciales entre los 
+cuatro métodos de detección de SVs en términos de tiempo de ejecución, uso de 
+memoria RAM y eficiencia del uso de CPU \textbf{Figura~\ref{fig:hpc_calls}}. 
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth]{data/cluster_bmk/hpc_callers.pdf}
+    \caption[Demanda de recursos computacionales para métodos de detección de 
+    variantes estructurales]{Demanda de recursos computacionales para los métodos 
+    de detección de variantes estructurales SAVANA, Severus, Sniffles2 y 
+    SVision-pro, medida en núcleos de CPU, memoria RAM (GB) y tiempo de ejecución 
+    (minutos). Para cada longitud media de lectura, se obtuvieron tres 
+    mediciones por métrica mediante la comparación de una única muestra normal 
+    contra tres réplicas técnicas de la muestra tumoral. Los datos en bruto 
+    completos utilizados para todos los cálculos están disponibles en 
+    \url{https://github.com/villena-francis/master_thesis/tree/main/data/cluster_bmk/hpc_data}.}
+    \label{fig:hpc_calls}
+\end{figure}
+
+
+
+Una distinción clave en la asignación de unidades de procesamiento radica en que 
+el modelo de detección de SVision-pro, basado en redes neuronales, está 
+optimizado para GPU, mientras que SAVANA, Severus y Sniffles2 dependen de 
+computación basada en CPU. Para las ejecuciones de SVision-pro se asignaron 24 
+núcleos de CPU junto con recursos de GPU, dado que pruebas preliminares 
+mostraron que la utilización máxima se mantenía por debajo de 20 núcleos. 
+
+\textbf{SVision-pro} presentó el menor tiempo de ejecución promedio (11.0 ± 3.7 
+minutos) con un consumo de memoria moderado (12.14 ± 0.94 GB), lo que refleja 
+la ventaja computacional de la aceleración por GPU, aunque mostró una utilización 
+de CPU del 66.1\% ± 22.5\% de los recursos asignados. 
+
+\textbf{Sniffles2} demostró ser el método más eficiente en términos de memoria 
+RAM entre los métodos basados en CPU, utilizando únicamente 5.57 ± 0.78 GB con 
+24 cores, alcanzó el segundo menor tiempo de ejecución (18.5 ± 3.8 minutos) y 
+presentó la menor utilización de CPU (38.1\% ± 9.4\%), lo que indica una mejor 
+optimización del uso de recursos. 
+
+\textbf{Severus} exhibió un consumo de memoria bajo (8.20 ± 1.56 GB) con 24 cores, 
+un tiempo de ejecución de 28.1 ± 5.1 minutos y una utilización de CPU moderada 
+(53.5\% ± 13.4\%). 
+
+\textbf{SAVANA}, a pesar de presentar el mayor tiempo de ejecución (29.7 ± 4.6 
+minutos) y la demanda de memoria más elevada (40.51 ± 10.52 GB, con picos de 
+hasta 61.86 GB) utilizando 24 cores, mantuvo una utilización de CPU del 63.2\% 
+± 9.8\%. 
+
+El análisis por longitud de lectura indicó que el tiempo de ejecución de SAVANA 
+aumentó progresivamente desde 24.8 minutos (15 kb) hasta 33.1 minutos (100 kb), 
+mientras que SVision-pro mostró el patrón inverso, con tiempos menores para 
+lecturas más largas (8.7 minutos para 50 kb).

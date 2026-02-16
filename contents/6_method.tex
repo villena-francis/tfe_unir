@@ -1,0 +1,320 @@
+\chapter{Material y métodos}
+
+\section{Recursos computacionales}
+
+El desarrollo del código para este proyecto se llevó a cabo en un MacBook Pro 
+con un procesador M4 Pro, que incluye una CPU de 14 núcleos, una GPU de 20 
+núcleos, 24 GB de memoria unificada y 1 TB de almacenamiento SSD.
+
+Debido a las demandas computacionales de las tareas requeridas para lograr los 
+objetivos propuestos, se utilizó el clúster de computación de alto rendimiento 
+(HPC) del CNIO. Esta infraestructura cuenta actualmente con 12 nodos de cómputo 
+cuyas configuraciones se detallan en la \textbf{Tabla~\ref{tab:nodes}}.
+
+\vspace{0.50cm}
+
+\begingroup
+\footnotesize
+\setlength{\LTpre}{0pt}
+\setlength{\LTpost}{0pt}
+\begin{longtable}{>{\RaggedRight\arraybackslash}p{1.75cm} 
+                  >{\RaggedRight\arraybackslash}p{2.75cm} 
+                  >{\RaggedRight\arraybackslash}p{2.25cm}
+                  >{\RaggedRight\arraybackslash}p{2cm}
+                  >{\RaggedRight\arraybackslash}p{4cm}}
+    \caption[Especificaciones técnicas de los nodos del clúster HPC del CNIO]{Especificaciones técnicas 
+    del los nodos del clúster HPC del CNIO \cite{tomas_di_domenico_cluster_nodate}.}\vspace{0.30cm}\label{tab:nodes}\\
+    \toprule
+    \textbf{Cantidad} & \textbf{Identificadores} & \textbf{núcleos CPU} & \textbf{RAM} & \textbf{GPUs} \\ 
+    \midrule
+    \endfirsthead
+    
+    \multicolumn{5}{@{}l}{\RaggedRight \textbf{\tablename\ \thetable{}} -- Continued} \\
+    \\
+    \toprule
+    \textbf{Cantidad} & \textbf{Identificadores} & \textbf{núcleos CPU} & \textbf{RAM} & \textbf{GPUs} \\ 
+    \midrule
+    \endhead
+    \\
+    \midrule 
+    \multicolumn{5}{r}{Continued on next page} \\
+    \endfoot
+    
+    \bottomrule
+    \endlastfoot
+    
+    \\
+    1     & bc001      & 24  & 32 GB  & -- \\
+    \\
+    6     & bc00[2-7]  & 52  & 512 GB & -- \\
+    \\
+    3     & bc00[8-10] & 128 & 1 TB   & -- \\
+    \\
+    1     & hm001      & 224 & 2 TB   & -- \\
+    \\
+    1     & gp001      & 112 & 768 GB & 3 x Nvidia A100 80 GB \\
+    \\
+    
+\end{longtable}
+\endgroup
+
+Los recursos de almacenamiento del clúster incluyen 52 TB de espacio estándar 
+para los directorios de inicio de los usuarios, además de 512 TB de 
+almacenamiento de alto rendimiento optimizado para las operaciones de entrada y 
+salida de los trabajos de cálculo. De este almacenamiento de alto rendimiento, 
+se asignaron específicamente 15 TB para la ejecución de código y la generación 
+de datos asociados a este proyecto.
+
+\section{Herramientas de software}
+
+Positron fue utilizado como interfaz principal para el acceso al clúster a través 
+de protocolo SSH (\textit{Secure Shell}) y el desarrollo de código. Se utilizaron 
+principalmente los lenguajes de programación Bash, Python y R.
+
+El clúster opera bajo el gestor de tareas Slurm, un sistema basado en Linux/Unix 
+para la gestión de recursos de HPC. La integración de los flujos de trabajo se 
+logró mediante Snakemake, un administrador que permite ejecutar análisis 
+reproducibles y escalables a través de la definición de reglas basadas en Python. 
+La instalación del software para cada regla se realizó mediante ambientes Conda, 
+lo que evita instalar software en cada nodo del clúster donde se ejecuten los 
+trabajos y posibles problemas de compatibilidad entre los diferentes programas. 
+Para gestionar los ambientes Conda, se utilizó Miniforge, una distribución 
+ligera a la que se incluyó el repositorio Bioconda para descargar herramientas 
+especializadas en bioinformática.
+
+En la \textbf{Tabla~\ref{tab:software}} se recogen todas las herramientas de 
+software utilizadas en este trabajo. En las siguientes secciones de este apartado 
+se describe cómo se han integrado las distintas herramientas para crear los 
+flujos de trabajo necesarios para alcanzar los objetivos específicos de este 
+proyecto. 
+
+\subsection{Simulación de datos de secuenciación de lecturas largas con eventos
+estructurales y detección de variantes}
+
+\subsubsection{Simulador de datos}
+
+Para la simulación específica de haplotipos con variantes estructurales simples 
+y complejas, se seleccionó el set de herramientas VISOR. Su módulo VISOR 
+LASeR incluye un modelo de incorporación de errores entrenado con lecturas de ONT 
+R10.4.1, proporcionado por Badread \cite{wick_badread_2019}.
+
+\subsubsection{Detectores de variantes estructurales}
+
+Se seleccionó un conjunto de herramientas de detección de SV en base a dos 
+criterios clave: compatibilidad con lecturas largas de ONT y capacidad de 
+detección de SV somáticas. Cada herramienta seleccionada presenta 
+características distintivas e interesantes para los análisis:
+
+\begin{itemize}
+
+    \item \textbf{SAVANA}: implementa un modelo de aprendizaje automático 
+    entrenado con muestras pareadas tumor-normal para detectar SV somáticas y 
+    aberraciones en el número de copias (CNAs) en casos clínicos.
+
+    \item \textbf{Severus}: especializado en análisis comparativos tumor/normal, 
+    admite múltiples muestras tumorales y emplea marcos de grafos de puntos de 
+    ruptura para la detección de reordenamientos cromosómicos complejos.
+
+    \item \textbf{Sniffles2}: una herramienta pionera de detección de SV en 
+    lecturas largas de ONT desde 2018, manteniéndose en desarrollo continuo y con 
+    actualizaciones regulares.
+
+    \item \textbf{SVision-pro}: emplea un enfoque basado en redes neuronales que 
+    convierte características genómicas de muestras pareadas en representaciones 
+    de imágenes para la detección comparativa de SV.
+
+\end{itemize}
+
+\subsubsection{Flujo de trabajo para la generación y detección de variantes 
+estructurales}
+
+Se desarrolló un flujo de trabajo integral para simulaciones basadas en VISOR y 
+el posterior análisis de detección de variantes estructurales. Las etapas principales
+del proceso se muestran en la \textbf{Figura \ref{fig:visor-sim}}. El código fuente 
+y la documentación asociada están disponibles en el siguiente repositorio: 
+\url{https://github.com/villena-francis/visor-simulations}.
+
+\begin{figure}[!htbp]
+    \centering
+    \includegraphics[scale=1.25]{img/visor-simulations.pdf}
+    \captionsetup{labelfont=bf, textfont={normalsize,it}}
+    \caption[Versión simplificada del flujo de trabajo ``visor-simulations'' para 
+    la simulación de lecturas largas y la detección de SVs]{Versión simplificada 
+    del flujo de trabajo ``visor-simulations'' para la simulación de lecturas 
+    largas y la detección de SVs. VISOR-HACk genera archivos FASTA (secuencias
+    molde) con SVs incorporadas utilizando un genoma de referencia e
+    instrucciones de haplotipos en formato BED (coordenadas genómicas delimitadas 
+    por tabulaciones). El script makeBED crea un archivo BED (intervalos genómicos) 
+    a partir de los tamaños máximos de cromosomas extraídos de los FASTA de haplotipos. 
+    Posteriormente, VISOR-LASeR genera archivos BAM (lecturas de secuenciación 
+    alineadas) junto con sus índices (.bai), empleando como entrada los ficheros
+    obtenidos en los pasos anteriores. Finalmente, las lecturas alineadas son 
+    procesadas por los detectores de SVs, generando cada uno su correspondiente 
+    archivo VCF (Variant Call Format) con las SVs identificadas.}
+    \label{fig:visor-sim}
+\end{figure}
+
+\subsubsection{Configuración de las simulaciones}
+
+En cada simulación de secuenciación de genoma completo mediante ONT, se 
+introdujeron SVs en el genoma de referencia T2T-CHM13 (\textit{chm13v2.0\_maskedY\_rCRS.fa}), 
+para generar lecturas sintéticas con una cobertura media de 40x. Con el objetivo de 
+evaluar el efecto de la longitud de las lecturas sobre la eficiencia del mapeo al genoma de 
+referencia y la capacidad de detección de las SVs introducidas, se realizaron 
+simulaciones con cuatro longitudes medias de lecturas: 15, 30, 50 y 100 kb. Para 
+cada longitud, se generó una muestra normal (sin SVs) y tres réplicas tumorales, 
+generándose así 12 muestras en total.
+
+El conjunto de SVs utilizadas se basó en aberraciones cromosómicas características 
+de mieloma múltiple, algunas descritas en la literatura científica y otras 
+observadas en pacientes reales (\textbf{Tabla~\ref{tab:stagesV1}}). Dado que los 
+puntos de rotura específicos no se encuentran detallados en la literatura 
+clínica para el genoma de referencia T2T-CHM13, sus coordenadas se determinaron 
+de forma aproximada utilizando el navegador genómico UCSC Genome Browser.
+
+\begingroup
+\vspace{0.50cm}
+
+\footnotesize
+
+\begin{longtable}{>{\RaggedRight\arraybackslash}p{2.25cm} 
+                  >{\RaggedRight\arraybackslash}p{10cm} 
+                  >{\RaggedLeft\arraybackslash}p{2cm}}
+    \captionsetup{labelfont=bf, textfont={normalsize,it}}
+    \caption[Características de las SVs simuladas]{Características de las SVs 
+    simuladas, inspiradas en datos de MM. \cite{aksenova_genome_2021}. Los valores 
+    de tamaño representan la longitud final en pares de bases (pb) tras la inserción en 
+    el genoma, aquellos marcacados con * implican puntos de rotura en regiones centroméricas. La 
+    duplicación en tándem consiste en un fragmento de 2 030 586 pb 
+    repetido cuatro veces. Los archivos de entrada para la simulación de estas
+    lecturas con \textit{visor-simularions} están disponibles en 
+    \url{https://github.com/villena-francis/tfe_unir/tree/main/data/cluster_bmk/visor_v1}.}
+    \vspace{0.3cm}\label{tab:stagesV1}\\
+
+    \toprule
+    \textbf{Tipo de SV} & \textbf{Descripción} & \textbf{Tamaño (pb)} \\ 
+    \midrule
+    \endfirsthead
+    
+    \multicolumn{3}{@{}l}{\RaggedRight \textbf{\tablename\ \thetable{}} -- Continued} \\
+    \\
+    \toprule
+    \textbf{SV type} & \textbf{Description} & \textbf{Size (pb)} \\ 
+    \midrule
+    \\
+    \endhead
+    \\
+    \midrule 
+    \multicolumn{3}{r}{\footnotesize Continued on next page} \\
+    \endfoot
+    
+    \bottomrule
+    \endlastfoot
+
+    \\
+    Duplicación en tandem             & Ganancia de un brazo 1q extra, una de las anomalías citogenéticas estructurales más frecuentes en el MM. & 123600854* \\
+    \\
+    Duplicación en tandem             & Amplificación de 1q21, otra de las anomalías estructurales asociadas a progresión de MM.                 & 11997705 \\
+    \\
+    Deleción                          & Deleción del 17p (~10\% de casos), indicador de mal pronóstico. La región mínima delecionada en 17p13 incluye el gen supresor tumoral \textit{TP53}. & 4307895 \\
+    \\
+    Deleción                          & Deleción total del 17p, también observado en células con MM.   & 23892418* \\
+    \\
+    Deleción                          & Perdida de una copia completa del cromosoma 13, también frecuente en MM  &  113566675 \\
+    \\
+    Translocación recíproca           & Reordenamiento cromosómico que afecta al gen de la cadena pesada de inmunoglobulina (\textit{IGH}) en 14q32, la más frecuente es con 11q13.                                                 & 500000  \\
+    \\
+    Translocación (cortar-pegar)      & Reordenamiento que afecta a \textit{CDKN2A}, gen supresor tumoral crucial cuya inactivación mediante mutaciones o deleciones es una de las alteraciones más frecuentes en cánceres humanos, solo superada por alteraciones en \textit{TP53}. & 50000 \\
+    \\
+    Inversión                         & Inversión cromosómica en 6q25.1, incluida como variante control para validar las capacidades de los detectores de SVs, aunque no es típicamente característica en mieloma múltiple.          & 3600000  \\
+    \\
+
+\end{longtable}
+\endgroup
+
+\subsection{Análisis comparativo de detectores de variantes estructurales}
+
+\subsubsection{Marco de evaluación}
+
+La evaluación del rendimiento se basó en un marco de clasificación binaria 
+que categorizó los resultados de detección de SVs como:
+
+\begin{itemize}
+    \item \textbf{Verdaderos Positivos (VP)}: SVs simuladas que fueron detectadas 
+    correctamente.
+
+    \item \textbf{Falsos Positivos (FP)}: SVs identificadas por el detector pero 
+    ausentes en la simulación, verificadas mediante inspección de lecturas.
+
+    \item \textbf{Falsos Negativos (FN)}: SVs simuladas presentes en las lecturas 
+    pero no detectadas por el detector.
+\end{itemize}
+
+Los Verdaderos Negativos (VN) fueron excluidos de este análisis debido a su falta 
+de aplicabilidad en la evaluación de la detección de SVs, dado el extenso 
+espacio genómico y la naturaleza de los métodos de detección de variantes 
+estructurales.
+
+\subsubsection{Métricas de rendimiento}
+
+Dada la imposibilidad de cuantificar los VN, se seleccionaron métricas 
+independientes de esta categoría para evaluar el rendimiento de los detectores
+de SVs:
+
+\begin{itemize}
+    \item \textbf{Sensibilidad} (\textit{Recall}): Proporción de casos positivos correctamente 
+    identificados
+    \begin{equation}
+        \label{eq:recall}
+        Recall = \frac{VP}{VP + FN}
+    \end{equation}
+
+    \item \textbf{Precisión} (\textit{Precision}): Exactitud de las predicciones positivas
+    \begin{equation}
+        \label{eq:precision}
+        Precision = \frac{VP}{VP + FP}
+    \end{equation}
+
+    \item \textbf{Puntuación F1} (\textit{F1 Score}): Media armónica de la precisión (P) y la sensibilidad (S)
+    \begin{equation}
+        \label{eq:f1score}
+        F1 = 2 \cdot \frac{P \cdot S}{P + S}
+    \end{equation}
+\end{itemize}
+
+Adicionalmente, se evaluó la eficiencia computacional de cada detector mediante 
+las estadísticas generadas por el gestor de recursos Slurm, incluyendo: 
+
+\begin{itemize}
+    \item \textbf{Utilización de CPU/GPU} (número de núcleos)
+    
+    \item \textbf{Consumo de memoria RAM} (GB)
+    
+    \item \textbf{Tiempo de ejecución} (minutos)
+\end{itemize}
+
+\subsubsection{Herramientas de validación y análisis}
+
+La visualización de las lecturas alineadas se realizó utilizando Genome-Wide (GW), 
+un navegador genómico avanzado que permite navegar de forma instantánea y fluida 
+a pesar del elevado volumen de los ficheros BAM (más de 100 GB cada uno). Este navegador 
+facilita la curación manual mediante navegación ágil entre variantes anotadas en 
+los VCF generados por los detectores de SVs, permitiendo validar los hallazgos 
+(\textbf{Figura~\ref{fig:GW_UI}}).
+
+Dado que el clúster carece de soporte para la ejecución de herramientas con 
+interfaz gráfica, el directorio que contenía los ficheros BAM generados por las 
+simulaciones se montó en un equipo local utilizando el protocolo SSHFS 
+(\textit{Secure SHell FileSystem}).
+
+Para el cálculo automatizado de las métricas descritas, se revisaron manualmente
+todas las lecturas, considerando únicamente las SVs que pudieron ser reconstruidas exitosamente 
+tras el alineamiento de las lecturas al genoma de referencia.    
+
+\subsubsection{Procesamiento y visualización de resultados}
+
+El procesamiento de los resultados, el cálculo comparativo de métricas y la 
+generación de representaciones gráficas se llevaron a cabo mediante scripts 
+desarrollados en R. El código completo está disponible en el repositorio 
+asociado a este proyecto: 
+\url{https://github.com/villena-francis/tfe_unir/tree/main/data/cluster_bmk/stats_plots.R}.

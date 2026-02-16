@@ -1,0 +1,204 @@
+\documentclass[12pt,a4paper,twoside]{scrreprt}
+\usepackage[spanish]{babel}
+\usepackage{fontspec}
+\usepackage{parskip}
+\usepackage{float}
+\usepackage[
+    font=normalsize,
+    labelfont={bf},
+    format=plain,
+    justification=justified,
+    singlelinecheck=false,
+    indention=0pt
+]{caption}
+\usepackage[style=vancouver, backend=biber]{biblatex}
+\usepackage{hyperref}
+\usepackage{geometry}
+\usepackage{graphicx}
+\usepackage{setspace}
+\usepackage{xcolor}
+\usepackage{enumitem}
+\usepackage{newunicodechar} 
+\usepackage{longtable} 
+\usepackage{array}           
+\usepackage{ragged2e}        
+\usepackage{booktabs}        
+\usepackage{colortbl}            
+\usepackage{appendix}
+\usepackage{afterpage}
+\usepackage{placeins} 
+\usepackage{subcaption}
+\usepackage{rotating} 
+
+% Márgenes del documento
+\geometry{left=3cm, right=2.5cm, top=2.5cm, bottom=2.5cm}
+% Interlineado
+\setstretch{1.5}
+% Fuente
+\setmainfont{Calibri}
+% Color UNIR
+\definecolor{UNIR}{HTML}{0098CD}
+% Página en blanco
+\newcommand{\blankpage}{
+\newpage
+\thispagestyle{empty}
+\mbox{}
+\newpage
+}
+% Formato UNIR...
+\RedeclareSectionCommand[
+  beforeskip=0pt,
+  afterskip=20pt  
+]{chapter}
+% Posición del número de página
+\setlength{\footskip}{35pt} 
+% Epígrafes de apartados 
+\newfontfamily\calibri{Calibri}
+\newfontfamily\calibrilight{Calibri Light}
+\setkomafont{disposition}{\normalfont}
+\setkomafont{chapter}{\color{UNIR}\calibrilight\fontsize{18}{22}\selectfont}  
+\renewcommand*{\chapterformat}{%
+\thechapter.\enskip}
+\setkomafont{section}{\color{UNIR}\calibrilight\fontsize{14}{17}\selectfont}
+\setkomafont{subsection}{\bfseries\calibri\fontsize{12}{15}\selectfont}
+\setkomafont{subsubsection}{\calibri\fontsize{12}{15}\selectfont}
+\setcounter{secnumdepth}{3}
+\RedeclareSectionCommand[
+  beforeskip=8pt, % espacio antes del título de sección
+  afterskip=8pt   % espacio después del título de sección
+]{section}
+\RedeclareSectionCommand[
+  beforeskip=0pt,   % espacio antes del título del capítulo (puedes ajustar)
+  afterskip=5pt     % espacio justo después del título del capítulo
+]{chapter}
+\RedeclareSectionCommand[
+  beforeskip=8pt, % espacio antes del título de sección
+  afterskip=8pt   % espacio después del título de sección
+]{subsection}
+\RedeclareSectionCommand[
+  beforeskip=8pt, % espacio antes del título de subsubsección
+  afterskip=8pt   % espacio después del título de subsubsección
+]{subsubsection}
+
+\captionsetup{labelfont=bf, textfont={normalsize,it}}
+
+% 'Tabla' en lugar de 'cuadro'
+\addto\captionsspanish{\renewcommand{\tablename}{Tabla}}
+% ancho caption
+\setlength{\LTcapwidth}{\textwidth} 
+
+% Reducir espacio entre filas de las tablas
+\renewcommand{\arraystretch}{0.6} 
+\makeatletter
+\patchcmd{\@arrayparboxrestore}
+  {\baselineskip\normalbaselineskip}
+  {\baselineskip 0.85\normalbaselineskip}
+  {}{}
+\makeatother
+
+
+% Add references
+\addbibresource{refs.bib}
+\setlength\bibitemsep{\baselineskip}
+\DeclareFieldFormat{urldate}{}
+
+
+% Font color
+\definecolor{indigo}{HTML}{1F497D}
+
+
+% Font for tables
+\definecolor{lightgray}{HTML}{EEEEEE}
+
+
+% Trademark symbol as a superscript
+\newcommand{\regsup}{\textsuperscript{\textregistered}}
+
+
+% Tiny textbullet
+\newunicodechar{•}{\textbullet}
+
+\setlist[itemize]{
+    label=\tiny\raise.5ex\hbox{•},
+    leftmargin=1.5em,  
+    labelwidth=1em,        
+    labelsep=0.2em,        
+    itemindent=0pt,        
+    align=left
+}
+
+\hypersetup{
+    colorlinks=true,
+    linkcolor=black,
+    citecolor=black,
+    urlcolor=blue    
+}
+
+
+% Parts of the document
+\begin{document}
+
+
+\justifying{}
+    % Stop page numbering for preliminary sections
+    \pagenumbering{gobble}
+    \include{contents/1_cover}
+    \blankpage{}
+
+
+    \include{contents/2_abstract_spa}
+    \blankpage{}
+
+
+    \include{contents/2_abstract_eng}
+    \blankpage{}
+
+
+    % Index
+    \renewcommand{\contentsname}{Índice de contenidos}
+    \tableofcontents
+    \blankpage{}
+
+
+    \renewcommand{\listfigurename}{Lista de figuras}
+    \listoffigures
+    \blankpage{}
+
+
+    \renewcommand{\listtablename}{Lista de tablas}
+    \listoftables
+    \blankpage{}
+
+
+    % Start page numbering
+    \clearpage
+    \pagenumbering{arabic}
+    \setcounter{page}{1}
+    % \AddLabels
+    \include{contents/4_intro}
+
+    \include{contents/5_objetives}
+    \blankpage{}
+
+    \include{contents/6_method}
+    \blankpage{}
+
+    \include{contents/7_results}
+    \blankpage{}
+
+    \include{contents/8_discussion}
+    \blankpage{}
+
+    \include{contents/9_conclusion}
+    \blankpage{}
+
+    \printbibliography
+
+
+    \appendix
+    \setcounter{figure}{0} % Reboot fig count
+    \setcounter{table}{0}  % Reboot table count
+    \include{contents/10_supplementary}
+
+
+\end{document}

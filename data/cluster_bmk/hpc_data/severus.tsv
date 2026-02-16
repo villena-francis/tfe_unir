@@ -1,0 +1,13 @@
+sid	slurmid	Cores per node	CPU Utilized	CPU Efficiency	Job Wall-clock time	Memory Utilized
+v1_40x_15000_B	6378108	24	09:46:39	72.14% of 13:33:12 core-walltime	00:33:53	10.74 GB
+v1_40x_15000_A	6378110	24	09:39:26	72.36% of 13:20:48 core-walltime	00:33:22	10.69 GB
+v1_40x_15000_C	6378113	24	05:03:57	59.64% of 08:29:36 core-walltime	00:21:14	10.67 GB
+v1_40x_30000_A	6381935	24	04:53:29	42.36% of 11:32:48 core-walltime	00:28:52	7.92 GB
+v1_40x_30000_C	6381938	24	04:56:45	42.83% of 11:32:48 core-walltime	00:28:52	7.97 GB
+v1_40x_50000_B	6381941	24	04:51:20	32.03% of 15:09:36 core-walltime	00:37:54	7.24 GB
+v1_40x_100000_B	6381946	24	05:37:08	49.14% of 11:26:00 core-walltime	00:28:35	6.91 GB
+v1_40x_50000_C	6381947	24	04:30:54	42.95% of 10:30:48 core-walltime	00:26:17	7.24 GB
+v1_40x_100000_A	6381951	24	05:31:45	58.53% of 09:26:48 core-walltime	00:23:37	6.90 GB
+v1_40x_50000_A	6381952	24	05:09:49	54.78% of 09:25:36 core-walltime	00:23:34	7.27 GB
+v1_40x_100000_C	6381957	24	07:58:58	70.48% of 11:19:36 core-walltime	00:28:19	6.92 GB
+v1_40x_30000_B	6381959	24	03:56:08	44.29% of 08:53:12 core-walltime	00:22:13	7.95 GB
